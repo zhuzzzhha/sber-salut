@@ -5,7 +5,7 @@ import {
   createAssistant,
 } from "@salutejs/client";
 import Header from "./components/Evolves"
-
+import { BrowserRouter } from 'react-router-dom';
 import "./App.css";
 
 
@@ -32,7 +32,7 @@ export class App extends React.Component {
       notes: [],
     }
 
-    this.assistant = initializeAssistant(() => this.getStateForAssistant() );
+    this.assistant = initializeAssistant(() => this.getStateForAssistant());
     this.assistant.on("data", (event/*: any*/) => {
       console.log(`assistant.on(data)`, event);
       const { action } = event
@@ -48,7 +48,7 @@ export class App extends React.Component {
     console.log('componentDidMount');
   }
 
-  getStateForAssistant () {
+  getStateForAssistant() {
     console.log('getStateForAssistant: this.state:', this.state)
     const state = {
       item_selector: {
@@ -65,16 +65,18 @@ export class App extends React.Component {
     return state;
   }
 
-  dispatchAssistantAction (action) {
+  dispatchAssistantAction(action) {
     console.log('dispatchAssistantAction', action);
   }
 
   render() {
     console.log('render');
     return (
-      <div className='btn-group'>
-          <Header />
-      </div>
+      <BrowserRouter>
+        <div className='btn-group'>
+           <Header />
+        </div>
+      </BrowserRouter >
     )
   }
 }
