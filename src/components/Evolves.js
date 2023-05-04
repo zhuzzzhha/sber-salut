@@ -1,19 +1,33 @@
 import React from 'react';
-
+import { useState } from 'react';
 import {Button} from '@salutejs/plasma-ui';
+import { Link } from 'react-router-dom';
 
-export default function Header(){
-    return (
-        <header>
-            <div className="btn-group">
-                <Button view="primary">1</Button>
-                <Button view="primary">2</Button>
-                <Button view="primary">3</Button>
-                <Button view="primary">4</Button>
-                <Button view="primary">5</Button>
-                <Button view="primary">6</Button>
-            </div>
-        </header>
-    )
+
+function SixButtons() {
+  const [selected, setSelected] = useState([]);
+
+  const handleButtonClick = (num) => {
+    if (selected.includes(num)) {
+      setSelected(selected.filter((n) => n !== num));
+    } else {
+      setSelected([...selected, num]);
+    }
+  };
+
+  return (
+    <div>
+        <h1>Выбери свой Evolve</h1>
+      {[1, 2, 3, 4, 5, 6].map((num) => (
+        <Link to="/Unit.js">
+            <Button key={num} onClick={() => handleButtonClick(num)} style={{ backgroundColor: selected.includes(num) ? 'green' : 'white' }}>
+              {num}
+            </Button>
+        </Link>
+      ))}
+    </div>
+  );
 }
 
+export default SixButtons;
+import TenButtons from './Unit';    
