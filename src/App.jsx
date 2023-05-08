@@ -4,8 +4,13 @@ import {
   createSmartappDebugger,
   createAssistant,
 } from "@salutejs/client";
-import Header from "./components/Evolves"
-import { BrowserRouter } from 'react-router-dom';
+import { useTransition, animated } from '@react-spring/web'
+import Evolves from "./components/Evolves"
+import Units from "./components/Units"
+import CardsLearning from "./components/CardsLearning"
+import CardsRepetition from "./components/CardsRepetition"
+import Modes from "./components/Modes"
+import { BrowserRouter as Router,Route,Routes,useLocation } from 'react-router-dom';
 import "./App.css";
 
 
@@ -72,13 +77,16 @@ export class App extends React.Component {
   render() {
     console.log('render');
     return (
-      <BrowserRouter>
-        <div className='btn-group'>
-           <Header />
-        </div>
-      </BrowserRouter >
-    )
+      <Router>
+            <Routes>
+              <Route path="/" element={<Evolves />} />
+              <Route path="/unit" element={<Units />} />
+              <Route path="/modes" element={<Modes />} />
+              <Route path="/learning" element={<CardsLearning />} />
+              <Route path="/repetition" element={<CardsRepetition />} />
+            </Routes>
+      </Router >
+    );
   }
 }
 export default App;
-
