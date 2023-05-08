@@ -3,7 +3,7 @@ import { useState } from 'react';
 import {Button} from '@salutejs/plasma-ui';
 import { Link } from 'react-router-dom';
 
-function SixButtons() {
+function Evolves() {
   const [selected, setSelected] = useState([]);
 
   const handleButtonClick = (num) => {
@@ -15,11 +15,11 @@ function SixButtons() {
   };
 
   return (
-    <div>
+    <div className='btn-group'>
         <h1>Выбери свой Evolve</h1>
       {[1, 2, 3, 4, 5, 6].map((num) => (
         <Link to="/Unit">
-            <Button key={num} onClick={() => handleButtonClick(num)} style={{ backgroundColor: selected.includes(num) ? 'green' : 'white' }}>
+            <Button key={num} onClick={() => handleButtonClick(num)}>
               {num}
             </Button>
         </Link>
@@ -28,4 +28,4 @@ function SixButtons() {
   );
 }
 
-export default SixButtons;
+export default Evolves;
