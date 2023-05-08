@@ -4,7 +4,7 @@ import {Button} from '@salutejs/plasma-ui';
 import { Link } from 'react-router-dom';
 
 
-function TwellveButtons() {
+function Units() {
   const [selected, setSelected] = useState([]);
 
   const handleButtonClick = (num) => {
@@ -16,11 +16,11 @@ function TwellveButtons() {
   };
 
   return (
-    <div>
+    <div className='btn-group2'>
         <h1>Выбери свой Unit</h1>
       {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((num) => (
-        <Link to="www.google.com">
-            <Button key={num} onClick={() => handleButtonClick(num)} style={{ backgroundColor: selected.includes(num) ? 'green' : 'white' }}>
+        <Link to="/modes">
+            <Button key={num} onClick={() => handleButtonClick(num)} >
               {num}
             </Button>
         </Link>
@@ -29,4 +29,4 @@ function TwellveButtons() {
   );
 }
 
-export default TwellveButtons;
+export default Units;
