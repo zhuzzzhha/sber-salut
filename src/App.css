@@ -38,3 +38,84 @@
   background-color: #00784a;
 }
 
+.btn-group2 button {
+  background-color: #04AA6D; /* Зеленый фон */
+  border: 1px solid green; /* Зеленая рамка */
+  color: white; /* Белый текст */
+  padding: 50px 50px; /* Некоторый отступ */
+  cursor: pointer; /* Иконка указателя/руки */
+  float: left; /* Выстраиваем кнопки рядом друг с другом */
+  margin-top: 210px;
+  margin-left: 75px;
+  color: #222;
+  font: bold 25px Arial;
+
+}
+
+.btn-group2 button:not(:last-child) {
+  border-right: none; /* Исключаем двойную рамку */
+}
+
+/* Сбрасываем обтекание (clearfix hack) */
+.btn-group2:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Добавляем фон при наведении курсора */
+.btn-group2 button:hover {
+  background-color: #00784a;
+}
+
+.cardsOff {
+  width: 300px;
+  height: 200px;
+  background: #a6c19d;
+  font: bold 40px Arial;
+  color: green;
+  margin: 20px;
+  border-radius: 4px;
+  text-align: center;
+  padding: 20px;
+}
+
+.cardsOn {
+  width: 300px;
+  height: 200px;
+  background: #61a4e7;
+  font: bold 40px Arial;
+  color: blue;
+  margin: 20px;
+  border-radius: 4px;
+  text-align: center;
+  padding: 20px;
+}
+
+.cardsButton{
+  width: 150px;
+  padding: 10px;
+  font-size: 20px;
+  background: #a14490;
+  font-weight: bold;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.outer-div
+{
+     padding: 100px;
+}
+.inner-div
+{
+     margin: auto;
+     width: 400px;
+     height: 100px;  
+}
+
+.divModes{
+  margin: auto;
+  width: 700px;
+}
+
+
