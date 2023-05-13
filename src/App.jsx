@@ -84,6 +84,8 @@ export class App extends React.Component {
               <Route path="/modes" element={<Modes />} />
               <Route path="/learning" element={<CardsLearning />} />
               <Route path="/repetition" element={<CardsRepetition />} />
+              <Route path="/resultper" element={<Resultper />} />
+              <Route path="/resultlear" element={<Resultlear />} />
             </Routes>
       </Router >
     );
