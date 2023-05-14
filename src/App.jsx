@@ -70,22 +70,82 @@ export class App extends React.Component {
     return state;
   }
 
-  dispatchAssistantAction(action) {
+  dispatchAssistantAction (action) {
     console.log('dispatchAssistantAction', action);
-  }
+    if (action) {
+      switch (action.type) {
+        case 'evolve_choose':
+          return this.evolve_choose(action);
 
+        case 'unit_choose':
+          return this.unit_choose(action);
+
+        case 'mode_choose':
+          return this.mode_choose(action);
+
+        default:
+          throw new Error();
+      }
+    }
+  }
+  evolve_choose (action) {
+    console.log('evolve_choose', action);
+    this.setState({
+      notes: [
+        ...this.state.notes,
+        {
+          id:        Math.random().toString(36).substring(7),
+          title:     action.note,
+          completed: false,
+        },
+      ],
+    })
+  }
+  unit_choose (action) {
+    console.log('unit_choose', action);
+    this.setState({
+      notes: [
+        ...this.state.notes,
+        {
+          id:        Math.random().toString(36).substring(7),
+          title:     action.note,
+          completed: false,
+        },
+      ],
+    })
+  }
+  mode_choose (action) {
+    console.log('mode_choose', action);
+    this.setState({
+      notes: [
+        ...this.state.notes,
+        {
+          id:        Math.random().toString(36).substring(7),
+          title:     action.note,
+          completed: false,
+        },
+      ],
+    })
+  }
   render() {
     console.log('render');
     return (
       <Router>
             <Routes>
-              <Route path="/" element={<Evolves />} />
-              <Route path="/unit" element={<Units />} />
-              <Route path="/modes" element={<Modes />} />
+              <Route path="/" element={ 
+              <Evolves 
+                  onEvolve={ (note)=>{this.evolve_choose({ type: "evolve_choose", note }); } }
+                  />} />
+              <Route path="/unit" element={
+              <Units 
+                  onUnit={ (note)=>{this.unit_choose({ type: "unit_choose", note }); } }
+                  />} />
+              <Route path="/modes" element={
+              <Modes
+              onModes={ (note)=>{this.mode_choose({ type: "mode_choose", note }); } }
+                  />} />
               <Route path="/learning" element={<CardsLearning />} />
               <Route path="/repetition" element={<CardsRepetition />} />
-              <Route path="/resultper" element={<Resultper />} />
-              <Route path="/resultlear" element={<Resultlear />} />
             </Routes>
       </Router >
     );
