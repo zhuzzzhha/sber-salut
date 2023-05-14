@@ -3,24 +3,26 @@ import { useState } from 'react';
 import {Button} from '@salutejs/plasma-ui';
 import { Link } from 'react-router-dom';
 
+export class Units extends React.Component {
 
-function Units() {
-  const [selected, setSelected] = useState([]);
-
-  const handleButtonClick = (num) => {
-    if (selected.includes(num)) {
-      setSelected(selected.filter((n) => n !== num));
-    } else {
-      setSelected([...selected, num]);
+  constructor (props) {
+    super(props)
+    this.state = {
+      note: '',
     }
-  };
+  }
+ 
+
+  render () {
+    const { onUnit } = this.props;
 
   return (
+    
     <div className='btn-group2'>
         <h1>Выбери свой Unit</h1>
-      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((num) => (
-        <Link to="/modes">
-            <Button key={num} onClick={() => handleButtonClick(num)} >
+      {[1, 2, 3, 4, 5, 6,7,8,9,10,11,12].map((num) => (
+        <Link to="/Modes">
+            <Button key={num} onClick={() => this.props.onUnit({note: num})}>
               {num}
             </Button>
         </Link>
@@ -28,5 +30,5 @@ function Units() {
     </div>
   );
 }
-
+}
 export default Units;
