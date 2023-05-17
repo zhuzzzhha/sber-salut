@@ -9,7 +9,7 @@ console.log(data)
   function get_data(evolve, unit){
     const result = data[evolve][unit];
     let json_data = []
-    for (let i = 0; i < result.length - 2; i+=2) {
+    for (let i = 0; i < result.length - 2; i++) {
       var newDict = {
         "title": result[i],
         "correct": result[i+1]
@@ -105,8 +105,9 @@ function getMatchUnit(word){
   return word
 }
 function CardsRepetition(props) {
-  const evolve = getMatchEvolve(props.onRepeat.evolve.note);
-  const unit = getMatchUnit(props.onRepeat.unit.note);
+  console.log(props.onRepeat.notes[0].title);
+  const evolve = getMatchEvolve(props.onRepeat.notes[0].title.note);
+  const unit = getMatchUnit(props.onRepeat.notes[1].title.note);
   const repetitions = get_data(evolve, unit);
   const [step, setStep] = useState(0);
   const repetition = repetitions[step];
