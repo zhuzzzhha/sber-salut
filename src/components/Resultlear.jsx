@@ -5,8 +5,11 @@ import { Link } from "react-router-dom";
 
 function Resultlear() {
   return (
-    <div className="btn-group">
-      <h1>Ты прошел изучение</h1>
+    <div className="outer-div inner-div btn-group">
+      <h1>Поздравляем, ты прошел изучение</h1>
+      <Link to="/">
+        <Button>Выход</Button>
+      </Link>
     </div>
   );
 }
