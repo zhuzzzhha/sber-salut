@@ -9,11 +9,12 @@ import Evolves from "./components/Evolves"
 import Units from "./components/Units"
 import CardsLearning from "./components/CardsLearning"
 import CardsRepetition from "./components/CardsRepetition"
+import Modes from "./components/Modes"
 import Resultper from "./components/Resultper"
 import Resultlear from "./components/Resultlear"
-import Modes from "./components/Modes"
 import { BrowserRouter as Router,Route,Routes,useLocation } from 'react-router-dom';
 import "./App.css";
+
 
 
 const initializeAssistant = (getState/*: any*/) => {
@@ -36,9 +37,7 @@ export class App extends React.Component {
     console.log('constructor');
 
     this.state = {
-      "evolve": "evolve_1",
-      "unit": "unit_1",
-      "mode": "",
+      notes: [],
     }
 
     this.assistant = initializeAssistant(() => this.getStateForAssistant());
@@ -95,35 +94,41 @@ export class App extends React.Component {
   evolve_choose (action) {
     console.log('evolve_choose', action);
     this.setState({
-      "evolve": action.note,
+      notes: [
+        ...this.state.notes,
+        {
+          id:        Math.random().toString(36).substring(7),
+          title:     action.note,
+          completed: false,
+        },
+      ],
     })
-    console.log(this.state)
   }
   unit_choose (action) {
     console.log('unit_choose', action);
     this.setState({
-      "unit": action.note,
+      notes: [
+        ...this.state.notes,
+        {
+          id:        Math.random().toString(36).substring(7),
+          title:     action.note,
+          completed: false,
+        },
+      ],
     })
-    console.log(this.state)
   }
   mode_choose (action) {
     console.log('mode_choose', action);
     this.setState({
-     "mode": action.note,
-    })
-    console.log(this.state)
-  }
-  cards_learn (action) {
-    console.log('cards_learn', action);
-    this.setState({
       notes: [
         ...this.state.notes,
         {
-          title:     action.note
+          id:        Math.random().toString(36).substring(7),
+          title:     action.note,
+          completed: false,
         },
       ],
     })
-    console.log(this.state)
   }
   render() {
     console.log('render');
