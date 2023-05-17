@@ -4,7 +4,7 @@ import { Button, h1 } from "@salutejs/plasma-ui";
 import { Link } from "react-router-dom";
 import ReactCardFlip from "react-card-flip";
 
-const repetitions = [
+/*const repetitions = [
   {
     title: "hello",
     correct: "привет",
@@ -17,7 +17,21 @@ const repetitions = [
     title: "bear",
     correct: "медведь",
   }
-]; 
+]; */
+let data = require('./data.json');
+console.log(data)
+  function get_data(evolve, unit){
+    const result = data[evolve][unit];
+    let json_data = []
+    for (let i = 0; i < result.length - 2; i++) {
+      var newDict = {
+        "title": result[i],
+        "correct": result[i+1]
+      };
+        json_data.push(newDict)
+    }
+    return json_data
+  }
 
 function Result() {
   return (
@@ -26,10 +40,74 @@ function Result() {
     </Link>
   );
 }
-
-function CardsLearning() {
+function getMatchEvolve(word){
+  if (word == 'первый' || word =='один'){
+    word = "evolve_1";
+  }
+  if (word == 'второй' || word =='два'){
+    word = "evolve_2";
+  }
+  if (word == 'третий' || word =='три'){
+    word = "evolve_3";
+  }
+  if (word == 'четвертый' || word =='четыре'){
+    word = "evolve_4";
+  }
+  if (word == 'пятый' || word =='пять'){
+    word = "evolve_5";
+  }
+  if (word == 'шестой' || word =='шесть'){
+    word = "evolve_6";
+  }
+  word = "evolve_" + word;
+  return word
+}
+function getMatchUnit(word){
+  if (word == 'первый' || word =='один'){
+    word = "unit_1";
+  }
+  if (word == 'второй' || word =='два'){
+    word = "unit_2";
+  }
+  if (word == 'третий' || word =='три'){
+    word = "unit_3";
+  }
+  if (word == 'четвертый' || word =='четыре'){
+    word = "unit_4";
+  }
+  if (word == 'пятый' || word =='пять'){
+    word = "unit_5";
+  }
+  if (word == 'шестой' || word =='шесть'){
+    word = "unit_6";
+  }
+  if (word == 'седьмой' || word =='семь'){
+    word = "unit_7";
+  }
+  if (word == 'восьмой' || word =='восемь'){
+    word = "unit_8";
+  }
+  if (word == 'девятый' || word =='девять'){
+    word = "unit_9";
+  }
+  if (word == 'десятый' || word =='десять'){
+    word = "unit_10";
+  }
+  if (word == 'одиннадцатый' || word =='одиннадцать'){
+    word = "unit_11";
+  }
+  if (word == 'двенадцатый' || word =='двенадцать'){
+    word = "unit_12";
+  }
+  word = "unit_" + word;
+  return word
+}
+function CardsLearning(props) { 
+  const evolve = getMatchEvolve(props.onLearn[0].evolve.note);
+  const unit = getMatchUnit(props.onLearn[1].unit.note);
+  const repetitions = get_data(evolve, unit);
   const [step, setStep] = useState(0);
-  const repetition = repetitions[step];
+  const repetition = repetitions[step]; 
   const len = repetitions.length;
 
   const [flip, setFlip] = useState(false);
