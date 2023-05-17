@@ -9,6 +9,8 @@ import Evolves from "./components/Evolves"
 import Units from "./components/Units"
 import CardsLearning from "./components/CardsLearning"
 import CardsRepetition from "./components/CardsRepetition"
+import Resultper from "./components/Resultper"
+import Resultlear from "./components/Resultlear"
 import Modes from "./components/Modes"
 import { BrowserRouter as Router,Route,Routes,useLocation } from 'react-router-dom';
 import "./App.css";
@@ -94,12 +96,11 @@ export class App extends React.Component {
       notes: [
         ...this.state.notes,
         {
-          id:        Math.random().toString(36).substring(7),
-          title:     action.note,
-          completed: false,
+          evolve:     action.note
         },
       ],
     })
+    console.log(this.state.notes)
   }
   unit_choose (action) {
     console.log('unit_choose', action);
@@ -107,12 +108,11 @@ export class App extends React.Component {
       notes: [
         ...this.state.notes,
         {
-          id:        Math.random().toString(36).substring(7),
-          title:     action.note,
-          completed: false,
+          unit:     action.note
         },
       ],
     })
+    console.log(this.state.notes)
   }
   mode_choose (action) {
     console.log('mode_choose', action);
@@ -120,12 +120,23 @@ export class App extends React.Component {
       notes: [
         ...this.state.notes,
         {
-          id:        Math.random().toString(36).substring(7),
-          title:     action.note,
-          completed: false,
+          title:     action.note
         },
       ],
     })
+    console.log(this.state.notes)
+  }
+  cards_learn (action) {
+    console.log('cards_learn', action);
+    this.setState({
+      notes: [
+        ...this.state.notes,
+        {
+          title:     action.note
+        },
+      ],
+    })
+    console.log(this.state.notes)
   }
   render() {
     console.log('render');
@@ -144,8 +155,15 @@ export class App extends React.Component {
               <Modes
               onModes={ (note)=>{this.mode_choose({ type: "mode_choose", note }); } }
                   />} />
-              <Route path="/learning" element={<CardsLearning />} />
-              <Route path="/repetition" element={<CardsRepetition />} />
+              <Route path="/learning" render={this.state.notes} element={
+              <CardsLearning 
+              onLearn = {(this.state.notes)}
+              />} />
+              <Route path="/repetition" render={this.state.notes} element={<CardsRepetition 
+              onRepeat = {(this.state.notes)}/>} />
+              <Route path="/resultper" element={<Resultper />} />
+              <Route path="/resultlear" element={<Resultlear />} />
+
             </Routes>
       </Router >
     );
