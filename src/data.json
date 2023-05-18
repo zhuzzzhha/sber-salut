@@ -5,24 +5,7 @@
 			"a clumsy person", "неловкий человек",
 			"a complex issue", "сложный вопрос",
 			"frustrating", "вызывающий чувство обиды",
-			"infuriating", "приводящий в ярость",
-			"time-consuming", "времязатратный",
-			"a tricky question", "коварный вопрос",
-			"to resist a temptation", "сопротивляться соблазну",
-			"to survive", "выживать",
-			"to tackle a problem", "затронуть проблему",
-			"to underestimate", "недооценивать",
-			"to overestimate", "переоценивать",
-			"to welcome", "приветствовать",
-			"i can''t take it!", "я так больше не могу!",
-			"get a grip of yourself!", "возьми себя в руки!",
-			"to accept a challenge", "принять вызов",
-			"to adapt to a situation", "адаптироваться к ситуации",
-			"to be a step forward of", "быть на шаг впереди",
-			"to be capable of", "быть способным на",
-			"to be frightened of", "бояться",
-			"to cope with", "пережить",
-			"to get through the day", "пережить день"
+			"infuriating", "приводящий в ярость"
 		],
 		"unit_2": [	
 			"adaptable", "приспособляющийся",
@@ -30,24 +13,14 @@
 			"poisonous", "ядовитый",
 			"animal life", "жизнь животных",
 			"plant life", "жизнь растений",
-			"sea life", "морская жизнь",
-			"a creature", "существо",
-			"an environment", "окружающая среда",	
-			"a form of life", "форма жизни",
-			"a habitat", "среда обитания",
-			"the origin of species", "происхождение видов",
-			"a pond", "пруд",
-			"a survivor", "выживший",
-			"a territory", "территория",
-			"a volcano", "вулкан"
+			"sea life", "морская жизнь"
 		],
 		"unit_3": [ 
 			"where do you live?", "где ты живешь?",
 			"how many rooms are there?", "сколько здесь комнат?", 
 			"what is there in your living-room?", "что есть в вашей гостиной?",
 			"describe your bedroom?", "опишите свою спальню?",
-			"what furniture do you have in the kitchen?", "какая мебель у вас есть на кухне?",
-			"is your apartment big?", "ваша квартира большая?"
+			"what furniture do you have in the kitchen?", "какая мебель у вас есть на кухне?"
 		], 
 		"unit_4": [	
 			"what technology do you use?", "какую технологию вы используете?",
@@ -55,17 +28,14 @@
 			"how often do you play computer games?", "как часто вы играете в компьютерные игры?",
 			"do you like music?", "тебе нравится музыка?", 
 			"what music do you have in your phone?", "какая музыка есть у вас в телефоне?", 
-			"when do you call your family?", "когда ты звонишь своей семье?",
-			"where do you watch movies?", "где вы смотрите фильмы?"
+			"when do you call your family?", "когда ты звонишь своей семье?"
 		],
 		"unit_5": [	
 			"do you go out with friends?", "вы встречаетесь с друзьями?",
 			"what do you do on weekdays?", "чем вы занимаетесь в будние дни?",
 			"what time do you get up?", "во сколько ты встаешь?",
 			"do you have breakfast in the morning?", "вы завтракаете по утрам?",
-			"does your mum make dinner for you?", "твоя мама готовит для тебя ужин?",
-			"what time does she go to work?", "во сколько она уходит на работу?",
-			"what do you do on sundays?", "чем вы занимаетесь по воскресеньям?"
+			"does your mum make dinner for you?", "твоя мама готовит для тебя ужин?"
 		],
 		"unit_6": [ 
 			"is your city big?", "ваш город большой?",
@@ -73,9 +43,55 @@
 			"is there a museum?", "здесь есть музей?",
 			"what places in your city do you like to visit?", "какие места в вашем городе вам нравится посещать?",
 			"do you like nature?", "вам нравится природа?",
-			"are you close to nature?", "вы близки к природе?",
+			"are you close to nature?", "вы близки к природе?"
+		],
+		"unit_7": [
+			"direct", "прямой",
+			"book", "книга",
+			"amused", "довольный", 
+			"annoyed", "раздраженный",
+			"fancy", "маскарадный",
+			"in good condition", "в хорошем состоянии"
+		],
+		"unit_8": [
+			"narrow down", "сузьте круг",
+			"get in touch with", "свяжитесь с",
+			"let know", "дайте знать",
+			"look into", "смотреть в",
+			"meet up", "встретиться",
+			"remind", "напоминать",
+			"lyrics", "текст песни",
+			"appear", "появиться",
+			"discover", "обнаруживать"
+		],
+		"unit_9": [
+			"to overestimate", "переоценивать",
+			"to welcome", "приветствовать",
+			"i can''t take it!", "я так больше не могу!",
+			"get a grip of yourself!", "возьми себя в руки!",
+			"to accept a challenge", "принять вызов"
+		],
+		"unit_10": [
+			"to adapt to a situation", "адаптироваться к ситуации",
+			"to be a step forward of", "быть на шаг впереди",
+			"to be capable of", "быть способным на",
+			"to be frightened of", "бояться",
+			"to cope with", "пережить",
+			"to get through the day", "пережить день"
+		],
+		"unit_11": [
 			"what is your favorite place?", "какое ваше любимое место?",
-			"where is it?", "где это?"
+			"where is it?", "где это?",
+			"what time does she go to work?", "во сколько она уходит на работу?",
+			"what do you do on sundays?", "чем вы занимаетесь по воскресеньям?",
+			"where do you watch movies?", "где вы смотрите фильмы?"
+		],
+		"unit_12": [
+			"do you think first impressions are always right?", "как вы думаете, первое впечатление всегда бывает правильным?",
+			"tell about your impressions when you first came to a new university.", "расскажите о своих впечатлениях, когда вы впервые пришли в новый университет.",
+			"when is your birthday?", "когда у тебя день рождения?",
+			"how and where do you celebrate it?", "как и где вы это празднуете?",
+			"how many brothers and sisters do you have?", "сколько у тебя братьев и сестер?"
 		]
 	},
 	"evolve_2": {
@@ -84,31 +100,21 @@
 			"name the members of your family.", "назовите членов вашей семьи.",
 			"what are their names?", "как их зовут?",
 			"where are your parents from?", "откуда родом твои родители?",
-			"what do they do?", "что они делают?",
-			"how many brothers and sisters do you have?", "сколько у тебя братьев и сестер?",
-			"when is your birthday?", "когда у тебя день рождения?",
-			"how and where do you celebrate it?", "как и где вы это празднуете?"
+			"what do they do?", "что они делают?"
 		],
 		"unit_2": [ 
 			"are you a busy person?", "вы занятой человек?",
 			"how do you remember all your plans?", "как ты запоминаешь все свои планы?", 
 			"do you use a calendar?", "пользуетесь ли вы календарем?", 
 			"do you help around the house?", "вы помогаете по дому?",
-			"how often do you do the laundry?", "как часто вы стираете белье?",
-			"how many hours do you sleep?", "сколько часов вы спите?",
-			"what time do you go to bed?", "во сколько ты ложишься спать?",
-			"what is your favorite place to study?", "какое ваше любимое место для учебы?",
-			"are you a successful student?", "вы успешный студент?", 
-			"what is success for you?", "что для вас значит успех?"
+			"how often do you do the laundry?", "как часто вы стираете белье?"
 		],
 		"unit_3": [	
 			"are you a sporty person?", "вы спортивный человек?", 
 			"how do you keep fit?", "как вы поддерживаете себя в форме?", 
 			"what kind of sports can people play?", "какими видами спорта могут заниматься люди?",
 			"do you like team or individual sports?", "вам нравятся командные или индивидуальные виды спорта?",
-			"what do you know about paralympic games?", "что вы знаете о паралимпийских играх?",
-			"what activities can stretch your body?", "какие занятия могут растянуть ваше тело?", 
-			"what do you think about bike-sharing?", "что вы думаете о совместном использовании велосипедов?"
+			"what do you know about paralympic games?", "что вы знаете о паралимпийских играх?"
 		],
 		"unit_4": [ 
 			"how do you spend your free time?", "как вы проводите свое свободное время?", 
@@ -125,9 +131,7 @@
 			"when and where was it?", "когда и где это было?",
 			"how did you feel?", "как ты себя чувствовал?",
 			"what feeling can people have and in what situations?", "какие чувства могут испытывать люди и в каких ситуациях?",
-			"what life events have already happened in your life and what will be next?", "какие жизненные события уже произошли в вашей жизни и что будет дальше?",
-			"do you think first impressions are always right?", "как вы думаете, первое впечатление всегда бывает правильным?",
-			"tell about your impressions when you first came to a new university.", "расскажите о своих впечатлениях, когда вы впервые пришли в новый университет."
+			"what life events have already happened in your life and what will be next?", "какие жизненные события уже произошли в вашей жизни и что будет дальше?"
 		],
 		"unit_6": [ 
 			"do you like shopping?", "вы любите ходить по магазинам?",
@@ -143,6 +147,56 @@
 			"what food do you like?", "какую еду вы любите?",
 			"what kind of food can you get form a food truck?", "какую еду вы можете купить в продуктовом фургоне?",
 			"tell a recipe of your comfort food.", "расскажите рецепт вашего любимого блюда."
+		],
+		"unit_8": [
+			"selfish", "эгоистичный",
+			"sociable", "общительный",
+			"be into", "быть в",
+			"be married", "состоять в браке",
+			"be raised", "быть поднятым",
+			"celebrate", "праздновать"
+		],
+		"unit_9": [
+			"live alone", "живи один",
+			"retire", "уходить в отставку", 
+			"hold on a sec", "подожди секунду",
+			"what activities can stretch your body?", "какие занятия могут растянуть ваше тело?", 
+			"what do you think about bike-sharing?", "что вы думаете о совместном использовании велосипедов?",
+			"how many hours do you sleep?", "сколько часов вы спите?"
+		],
+		"unit_10": [
+			"what time do you go to bed?", "во сколько ты ложишься спать?",
+			"what is your favorite place to study?", "какое ваше любимое место для учебы?",
+			"are you a successful student?", "вы успешный студент?", 
+			"what is success for you?", "что для вас значит успех?",
+			"is your apartment big?", "ваша квартира большая?",
+			"a creature", "существо"
+		],
+		"unit_11": [
+			"an environment", "окружающая среда",	
+			"a form of life", "форма жизни",
+			"a habitat", "среда обитания",
+			"the origin of species", "происхождение видов",
+			"a pond", "пруд",
+			"a survivor", "выживший",
+			"a territory", "территория",			
+			"cotton", "хлопок",
+			"glass", "стекло", 
+			"leather", "кожа",
+			"shake", "трясти",
+			"architecture", "архитектура",
+			"biology", "биология",
+			"chemistry", "химия",
+			"computer science", "компьютерная наука"
+		],
+		"unit_12": [
+			"a volcano", "вулкан",
+			"time-consuming", "времязатратный",
+			"a tricky question", "коварный вопрос",
+			"to resist a temptation", "сопротивляться соблазну",
+			"to survive", "выживать",
+			"to tackle a problem", "затронуть проблему",
+			"to underestimate", "недооценивать"
 		]
 	},
 	"evolve_3": {
@@ -153,16 +207,7 @@
 			"helpful", "полезный",
 			"honest", "честный",
 			"intelligent", "умный",
-			"reliable", "надежный",
-			"selfish", "эгоистичный",
-			"sociable", "общительный",
-			"be into", "быть в",
-			"be married", "состоять в браке",
-			"be raised", "быть поднятым",
-			"celebrate", "праздновать",
-			"live alone", "живи один",
-			"retire", "уходить в отставку", 
-			"hold on a sec", "подожди секунду"
+			"reliable", "надежный"
 		],
 		"unit_2": [ 
 			"device", "устройство",
@@ -170,17 +215,7 @@
 			"storage", "место хранения",
 			"brand new", "совершенно новый",
 			"common", "общий",
-			"damage", "повреждение",
-			"fancy", "маскарадный",
-			"in good condition", "в хорошем состоянии",
-			"modern", "современный",
-			"outdated", "устаревший",
-			"plain", "простой",
-			"used", "использованный",
-			"useful", "полезный",
-			"delete", "удалить",
-			"set up", "устанавливать", 
-			"bridge", "мост"
+			"damage", "повреждение"
 		],
 		"unit_3": [ 
 			"embassy", "посольство",
@@ -188,17 +223,7 @@
 			"fire station", "пожарная станция",
 			"highway", "шоссе",
 			"monument", "памятник",
-			"parking lot", "автостоянка",
-			"sculpture", "скульптура",
-			"sidewalk", "тротуар",
-			"arrival", "прибытие",
-			"fare", "стоимость проезда",
-			"route", "маршрут",
-			"schedule", "расписание",
-			"direct", "прямой",
-			"book", "книга",
-			"amused", "довольный", 
-			"annoyed", "раздраженный"
+			"parking lot", "автостоянка"
 		],
 		"unit_4": [ 
 			"disappointed", "разочарованный",
@@ -206,17 +231,7 @@
 			"fascinated", "очарованный",
 			"frightened", "испуганный",
 			"arrange", "организовать",
-			"deal with", "иметь дело с",
-			"get in touch with", "свяжитесь с",
-			"let know", "дайте знать",
-			"look into", "смотреть в",
-			"meet up", "встретиться",
-			"remind", "напоминать",
-			"lyrics", "текст песни",
-			"appear", "появиться",
-			"discover", "обнаруживать",
-			"drop", "бросать", 
-			"fall off", "отпадать"
+			"deal with", "иметь дело с"
 		],
 		"unit_5": [ 
 			"get back", "вернись",
@@ -224,17 +239,7 @@
 			"locate", "разместить",
 			"return", "вернуть",
 			"search", "поиск",
-			"be grateful", "будьте благодарны",
-			"be in trouble", "быть в беде",
-			"break down", "сломать",
-			"feel sorry", "сочувствую",
-			"figure out what to do", "придумайте, что делать",
-			"get lost", "заблудиться",
-			"give a ride", "подвези меня",
-			"take care", "заботиться",
-			"warn that", "предупредить, что",
-			"subway", "метро", 
-			"narrow down", "сузьте круг"
+			"be grateful", "будьте благодарны"
 		],
 		"unit_6": [ 
 			"concrete", "бетон",
@@ -243,17 +248,7 @@
 			"smoke", "дым",
 			"space", "пространство",
 			"traffic", "движение",
-			"traffic jam", "дорожная пробка",
-			"trash", "мусор",
-			"angrily", "сердито",
-			"beautifully", "красиво",
-			"calmly", "спокойно",
-			"completely", "полностью",
-			"dangerously", "опасно",
-			"loudly", "громко",
-			"politely", "вежливо", 
-			"quietly", "тихо",
-			"creature of habit", "порождение привычки"
+			"traffic jam", "дорожная пробка"
 		],
 		"unit_7": [ 
 			"safely", "безопасно",
@@ -262,17 +257,7 @@
 			"animated movie", "анимационный фильм",
 			"horror", "ужас",
 			"science fiction", "научная фантастика",
-			"soap opera", "мыльная опера",
-			"thanks to something", "благодаря чему-то",
-			"achievement", "достижение",
-			"challenge", "вызов",
-			"change", "менять",
-			"chore", "обязанность",
-			"opportunity", "возможность",
-			"success", "успех",
-			"concentrate on something", "сконцентрируйся на чем-нибудь", 
-			"do your best", "сделай все возможное",
-			"spill", "проливать"
+			"soap opera", "мыльная опера"
 		],
 		"unit_8": [ 
 			"get nowhere", "никуда не денешься",
@@ -281,16 +266,14 @@
 			"take it easy", "не принимайте это близко к сердцу",
 			"waste time", "терять время",
 			"it's worth it", "это того стоит",
-			"architecture", "архитектура",
-			"biology", "биология",
-			"chemistry", "химия",
-			"computer science", "компьютерная наука",
-			"education", "образование",
-			"engineering", "инженерное искусство",
-			"law", "закон",
-			"physics", "физика", 
-			"political science", "политология",
-			"slip", "скользить"
+			"drop", "бросать", 
+			"fall off", "отпадать",
+			"sculpture", "скульптура",
+			"sidewalk", "тротуар",
+			"arrival", "прибытие",
+			"fare", "стоимость проезда",
+			"route", "маршрут",
+			"schedule", "расписание"
 		],
 		"unit_9": [ 
 			"employer", "работодатель",
@@ -299,17 +282,19 @@
 			"wage", "заработная плата",
 			"working hours", "время работы",
 			"apply for", "подает на",
-			"fire", "огонь",
-			"manage", "управлять",
-			"applicant", "заявитель",
-			"deadline", "крайний срок",
-			"degree", "степень",
-			"major", "главный",
-			"qualifications", "квалификации",
-			"cotton", "хлопок",
-			"glass", "стекло", 
-			"leather", "кожа",
-			"shake", "трясти"
+			"loudly", "громко",
+			"politely", "вежливо", 
+			"quietly", "тихо",
+			"creature of habit", "порождение привычки",
+			"be in trouble", "быть в беде",
+			"break down", "сломать",
+			"feel sorry", "сочувствую",
+			"figure out what to do", "придумайте, что делать",
+			"get lost", "заблудиться",
+			"give a ride", "подвези меня",
+			"take care", "заботиться",
+			"warn that", "предупредить, что",
+			"subway", "метро"
 		],
 		"unit_10": [ 
 			"stone", "камень",
@@ -319,16 +304,7 @@
 			"hard - fragile", "твердый - хрупкий",
 			"heavy - light", "тяжелый - легкий",
 			"soft", "мягкий",
-			"strong", "сильный",
-			"warm", "теплый",
-			"waterproof", "водонепроницаемый",
-			"catch", "ловить",
-			"deliver", "доставлять",
-			"freeze", "замерзать",
-			"grow", "расти",
-			"pick", "выбирать", 
-			"produce", "производить",
-			"pull out", "вытаскивать"
+			"strong", "сильный"
 		],
 		"unit_11": [ 
 			"ship", "корабль",
@@ -338,16 +314,14 @@
 			"advantage", "преимущество",
 			"goal", "цель",
 			"research", "исследование",
-			"reward", "награда",
-			"figure something out", "придумай что-нибудь",
-			"get over something", "преодолеть что-то",
-			"give something up", "откажись от чего-нибудь",
-			"keep something up", "продолжай в том же духе",
-			"set something up", "приготовь что-нибудь",
-			"stand out", "выделяться",
-			"work out", "разрабатывать", 
-			"consider", "рассматривать",
-			"pick up", "подбирать"
+			"modern", "современный",
+			"outdated", "устаревший",
+			"plain", "простой",
+			"used", "использованный",
+			"useful", "полезный",
+			"delete", "удалить",
+			"set up", "устанавливать", 
+			"bridge", "мост"
 		],
 		"unit_12": [ 
 			"benefit", "выгода",
@@ -358,14 +332,28 @@
 			"huge", "огромный",
 			"magnificent", "великолепный",
 			"miserable", "несчастный",
-			"starving", "голодающий",
-			"terrific", "потрясающий",
-			"terrified", "напуганный",
-			"be mad at", "злиться на",
-			"blame", "вина",
-			"destroy", "уничтожать",
-			"fall out", "выпадать", 
-			"knock off", "отбой"
+			"education", "образование",
+			"engineering", "инженерное искусство",
+			"law", "закон",
+			"physics", "физика", 
+			"political science", "политология",
+			"slip", "скользить",
+			"thanks to something", "благодаря чему-то",
+			"achievement", "достижение",
+			"challenge", "вызов",
+			"change", "менять",
+			"chore", "обязанность",
+			"opportunity", "возможность",
+			"success", "успех",
+			"concentrate on something", "сконцентрируйся на чем-нибудь", 
+			"do your best", "сделай все возможное",
+			"spill", "проливать",
+			"trash", "мусор",
+			"angrily", "сердито",
+			"beautifully", "красиво",
+			"calmly", "спокойно",
+			"completely", "полностью",
+			"dangerously", "опасно"
 		]
 	},
 
@@ -387,7 +375,8 @@
 			"impact", "влияние",
 			"ignore", "игнорировать",
 			"nutrition", "питание",
-			"local", "местный"],
+			"local", "местный"
+		],
 	"unit_2": [	"academic", "академический",
 			"achievement", "достижение",
 			"ambition", "амбиция",
@@ -407,7 +396,8 @@
 			"postgraduate", "аспирант",
 			"pride", "гордость",
 			"skill", "навык",
-			"training", "обучение"],
+			"training", "обучение"
+		],
 	"unit_3": [	"a vehicle", "транспортное средство",
 			"an electric car", "электромобиль",
 			"petrol", "бензин",
@@ -425,7 +415,8 @@
 			"to convert", "для преобразования",
 			"data", "данные",
 			"a destination", "пункт назначения",
-			"an environmentalist", " защитник окружающей среды"],
+			"an environmentalist", " защитник окружающей среды"
+		],
 	"unit_4": [ "tabloid", "бульварный",
 			"information overload", "информационная перегрузка",
 			"coverage", "покрытие",
@@ -445,7 +436,8 @@
 			"cover a story", "освещать историю",
 			"offensive material", "оскорбительный материал",
 			"parental control", "родительский контроль",
-			"a human interest story", "история, представляющая человеческий интерес"],
+			"a human interest story", "история, представляющая человеческий интерес"
+		],
 	"unit_5": [ "agricultural land", "сельскохозяйственные угодья",
 			"destination", "место назначения",
 			"distinctive markings", "отличительные знаки",
@@ -465,7 +457,8 @@
 			"underestimate", "недооценивать",
 			"endangered", "находящийся под угрозой",
 			"zero emissions", "нулевые выбросы",
-			"traffic congestion rush hours", "пробки на дорогах в часы пик"],
+			"traffic congestion rush hours", "пробки на дорогах в часы пик"
+		],
 	"unit_6": [ "background", "фон",
 			"charity", "благотворительность",
 			"deman", "деман",
@@ -481,7 +474,8 @@
 			"reject", "отклонять",
 			"seminar", "семинар",
 			"try hard", "сильно стараться",
-			"unexpected", "неожиданный"],
+			"unexpected", "неожиданный"
+		],
 	"unit_7": [ "raise", "поднимать",
 			"rise", "подъем",
 			"illiterate", "неграмотный",
@@ -502,7 +496,8 @@
 			"effectively", "эффективно",
 			"essential", "существенный",
 			"expectation", "ожидание",
-			"qualify", "квалифицировать"],
+			"qualify", "квалифицировать"
+	],
 	"unit_8": [ "abroad", "за границей",
 			"accompany", "сопровождать",
 			"aircraf", "летательный аппарат",
@@ -515,7 +510,8 @@
 			"expand", "расширять",
 			"fashionable", "модный",
 			"global warming", "глобальное потепление",
-			"impact", "влияние"],
+			"impact", "влияние"
+	],
 	"unit_9": [ "access", "доступ",
 			"accessible", "доступный", 
 			"benefit", "выгода",
@@ -534,7 +530,8 @@
 			"water supplies", "водоснабжение",
 			"water source", "источник воды",
 			"the natural world", "мир природы",
-			"water sports","водные виды спорта"],
+			"water sports","водные виды спорта"
+	],
 	"unit_10": [ "accommodation", "размещение",
 			"affordable", "доступный",
 			"available", "доступный",
@@ -555,7 +552,46 @@
 			"straight away", "сразу",
 			"thatched", "покрытый соломой",
 			"timber", "древесина",
-			"occupant", "захватчик"]
+			"occupant", "захватчик"
+	],
+	"unit_11": [
+			"starving", "голодающий",
+			"terrific", "потрясающий",
+			"terrified", "напуганный",
+			"be mad at", "злиться на",
+			"blame", "вина",
+			"destroy", "уничтожать",
+			"fall out", "выпадать"
+	],
+	"unit_12": [
+		"knock off", "отбой",
+			"reward", "награда",
+			"figure something out", "придумай что-нибудь",
+			"get over something", "преодолеть что-то",
+			"give something up", "откажись от чего-нибудь",
+			"keep something up", "продолжай в том же духе",
+			"set something up", "приготовь что-нибудь",
+			"stand out", "выделяться",
+			"work out", "разрабатывать", 
+			"consider", "рассматривать",
+			"pick up", "подбирать",
+			"warm", "теплый",
+			"waterproof", "водонепроницаемый",
+			"catch", "ловить",
+			"deliver", "доставлять",
+			"freeze", "замерзать",
+			"grow", "расти",
+			"pick", "выбирать", 
+			"produce", "производить",
+			"pull out", "вытаскивать",
+			"fire", "огонь",
+			"manage", "управлять",
+			"applicant", "заявитель",
+			"deadline", "крайний срок",
+			"degree", "степень",
+			"major", "главный",
+			"qualifications", "квалификации"
+	]
 
 },
 	"evolve_5": {
