@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import {Button} from '@salutejs/plasma-ui';
 import { Link } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 export class Evolves extends React.Component {
 
@@ -15,7 +16,14 @@ export class Evolves extends React.Component {
 
   render () {
     const { onEvolve } = this.props;
-
+    const { onChangeEv } = this.props;
+    console.log("alloevolve", this.props.onChangeEv.notes[0].title);
+   if (this.props.onChangeEv.notes[0].title != "no") {
+      return (
+      <Navigate to="/Unit" />
+      );
+    }
+  
   return (
     
     <div className='btn-group'>
