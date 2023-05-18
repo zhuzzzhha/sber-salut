@@ -9,7 +9,6 @@ import { useTransition, animated } from '@react-spring/web'
 import Evolves from "./components/Evolves"
 import Units from "./components/Units"
 import CardsLearning from "./components/CardsLearning"
-import CardsRepetition from "./components/CardsRepetition"
 import Modes from "./components/Modes"
 import Resultper from "./components/Resultper"
 import Resultlear from "./components/Resultlear"
@@ -38,7 +37,7 @@ export class App extends React.Component {
     console.log('constructor');
 
     this.state = {
-      notes: [{"title": "no"},{"title": "no"},{"title": "no"}],
+      notes: [{"title": "no"},{"title": "no"}],
     }
 
     this.assistant = initializeAssistant(() => this.getStateForAssistant());
@@ -94,17 +93,20 @@ export class App extends React.Component {
   }
   evolve_choose (action) {
     console.log('evolve_choose', action);
+    if (action.note != undefined){
     this.setState({
-      notes: [
-        {
-          title:     action.note,
-        },
-        ...this.state.notes.slice(1),
-      ],
+        notes: [
+          {
+            title:    action.note,
+          },
+          ...this.state.notes.slice(1),
+        ],
     })
   }
+}
   unit_choose (action) {
     console.log('unit_choose', action);
+     if (action.note != undefined){
     this.setState({
       notes: [
         this.state.notes[0],
@@ -114,19 +116,19 @@ export class App extends React.Component {
         ...this.state.notes.slice(2),
       ],
     })
-  }
+  }}
   mode_choose (action) {
     console.log('mode_choose', action);
     this.setState({
       notes: [
         ...this.state.notes,
         {
-          title:     action.note,
+          title:      action.note,
         },
       ],
     })
   }
-  /*say_word (action) {
+  say_word (action) {
     console.log('say_word', action);
     this.setState({
       notes: [
@@ -138,7 +140,7 @@ export class App extends React.Component {
         },
       ],
     })
-  }*/
+  }
   render() {
     console.log('render');
     
@@ -163,12 +165,7 @@ export class App extends React.Component {
               <Route path="/learning" render={this.state} element={
               <CardsLearning 
               onLearn = {(this.state)}
-              onChangeMode = {(this.state)}
               />} />
-              <Route path="/repetition" render={this.state} element={<CardsRepetition 
-              onRepeat = {(this.state)}/>} />
-              onWord={ (note)=>{this.say_word({ type: "say_word", note }); } }
-              <Route path="/resultper" element={<Resultper />} />
               <Route path="/resultlear" element={<Resultlear />} />
 
             </Routes>
