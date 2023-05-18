@@ -16,17 +16,11 @@ export class Modes extends React.Component {
  
 
   render () {
-    const { onModes } = this.props;
     const { onChangeMode } = this.props;
-    console.log("allomode", this.props.onChangeMode.notes[2].title);
-    if (this.props.onChangeMode.notes[2].title == "repetition") {
+    console.log("allomode", this.props.onChangeMode.notes);
+    if (this.props.onChangeMode.notes.length > 2 && this.props.onChangeMode.notes[2].title != "no" && this.props.onChangeMode.notes[2].title != Object) {
       return (
-      <Navigate to="/CardsRepetition" />
-      );
-    }
-    if (this.props.onChangeMode.notes[2].title == "learning") {
-      return (
-      <Navigate to="/CardsLearning" />
+      <Navigate to="/learning" />
       );
     }
   return (
@@ -34,12 +28,9 @@ export class Modes extends React.Component {
       <h1>Выбери режим</h1>
       <div className="divModes">
         <Link to="/learning">
-          <Button onClick= {() => this.props.onModes({note: 'learning'})}>Изучение</Button>
+          <Button onClick= {() => this.props.onModes('learning')}>Изучение</Button>
         </Link>
         <p></p>
-        <Link to="/repetition">
-          <Button onClick={() => this.props.onModes({note: 'repetition'})}>Повторение</Button>
-        </Link>
       </div>
     </div>
   );
