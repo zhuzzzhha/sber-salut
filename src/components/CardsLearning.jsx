@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button, h1 } from "@salutejs/plasma-ui";
 import { Link } from "react-router-dom";
 import ReactCardFlip from "react-card-flip";
+import { Navigate } from 'react-router-dom';
 
 /*const repetitions = [
   {
@@ -40,72 +41,18 @@ function Result() {
     </Link>
   );
 }
-function getMatchEvolve(word){
-  if (word == 'первый' || word =='один'){
-    word = "evolve_1";
-  }
-  if (word == 'второй' || word =='два'){
-    word = "evolve_2";
-  }
-  if (word == 'третий' || word =='три'){
-    word = "evolve_3";
-  }
-  if (word == 'четвертый' || word =='четыре'){
-    word = "evolve_4";
-  }
-  if (word == 'пятый' || word =='пять'){
-    word = "evolve_5";
-  }
-  if (word == 'шестой' || word =='шесть'){
-    word = "evolve_6";
-  }
-  word = "evolve_" + word;
-  return word
-}
-function getMatchUnit(word){
-  if (word == 'первый' || word =='один'){
-    word = "unit_1";
-  }
-  if (word == 'второй' || word =='два'){
-    word = "unit_2";
-  }
-  if (word == 'третий' || word =='три'){
-    word = "unit_3";
-  }
-  if (word == 'четвертый' || word =='четыре'){
-    word = "unit_4";
-  }
-  if (word == 'пятый' || word =='пять'){
-    word = "unit_5";
-  }
-  if (word == 'шестой' || word =='шесть'){
-    word = "unit_6";
-  }
-  if (word == 'седьмой' || word =='семь'){
-    word = "unit_7";
-  }
-  if (word == 'восьмой' || word =='восемь'){
-    word = "unit_8";
-  }
-  if (word == 'девятый' || word =='девять'){
-    word = "unit_9";
-  }
-  if (word == 'десятый' || word =='десять'){
-    word = "unit_10";
-  }
-  if (word == 'одиннадцатый' || word =='одиннадцать'){
-    word = "unit_11";
-  }
-  if (word == 'двенадцатый' || word =='двенадцать'){
-    word = "unit_12";
-  }
-  word = "unit_" + word;
-  return word
-}
+
 function CardsLearning(props) { 
-  console.log(props.onLearn.notes[0].title);
-  const evolve = getMatchEvolve(props.onLearn.notes[0].title.note);
-  const unit = getMatchUnit(props.onLearn.notes[1].title.note);
+  /*console.log(props.onLearn.notes[0].title);*/
+  let evolve = "evolve_1";
+  let unit = "unit_1";
+  console.log("cardslearning", props.onLearn);
+  if (props.onLearn.notes[0].title != "no" && props.onLearn.notes[0].title!= Object){
+  evolve = "evolve_" + String(props.onLearn.notes[0].title);
+  }
+  if (props.onLearn.notes[1].title != "no"&& props.onLearn.notes[1].title!= Object){
+  unit = "unit_" + String(props.onLearn.notes[1].title);
+  }
   const repetitions = get_data(evolve, unit);
   const [step, setStep] = useState(0);
   const repetition = repetitions[step]; 
@@ -126,7 +73,7 @@ function CardsLearning(props) {
             <br />
             <br />
             <Button className="cardsButton" onClick={() => setFlip(!flip)}>
-              Flip
+              Узнать перевод
             </Button>
           </div>
           <div className="cardsOn">
@@ -134,7 +81,7 @@ function CardsLearning(props) {
             <br />
             <br />
             <Button className="cardsButton" onClick={() => setFlip(!flip)}>
-              Flip
+              Вернуться к предыдущему
             </Button>
             <br />
 
@@ -148,7 +95,7 @@ function CardsLearning(props) {
                   className="cardsButton"
                   onClick={() => handleButtonClick()}
                 >
-                  Flip2
+                  Перейти к следующему
                 </Button>
               </>
             )}
