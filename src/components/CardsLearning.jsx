@@ -73,7 +73,7 @@ function CardsLearning(props) {
 
             {step == len - 1 ? (
               <Link to="/resultper">
-                <Button className="cardsButton">Flip2</Button>
+                <Button className="cardsButton">Узнать результат</Button>
               </Link>
             ) : (
               <>
