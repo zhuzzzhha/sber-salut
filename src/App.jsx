@@ -4,6 +4,7 @@ import {
   createSmartappDebugger,
   createAssistant,
 } from "@salutejs/client";
+import { Navigate } from 'react-router-dom';
 import { useTransition, animated } from '@react-spring/web'
 import Evolves from "./components/Evolves"
 import Units from "./components/Units"
@@ -37,7 +38,7 @@ export class App extends React.Component {
     console.log('constructor');
 
     this.state = {
-      notes: [],
+      notes: [{"title": "no"},{"title": "no"},{"title": "no"}],
     }
 
     this.assistant = initializeAssistant(() => this.getStateForAssistant());
@@ -95,12 +96,10 @@ export class App extends React.Component {
     console.log('evolve_choose', action);
     this.setState({
       notes: [
-        ...this.state.notes,
         {
-          id:        Math.random().toString(36).substring(7),
           title:     action.note,
-          completed: false,
         },
+        ...this.state.notes.slice(1),
       ],
     })
   }
@@ -108,12 +107,11 @@ export class App extends React.Component {
     console.log('unit_choose', action);
     this.setState({
       notes: [
-        ...this.state.notes,
+        this.state.notes[0],
         {
-          id:        Math.random().toString(36).substring(7),
           title:     action.note,
-          completed: false,
         },
+        ...this.state.notes.slice(2),
       ],
     })
   }
@@ -123,36 +121,53 @@ export class App extends React.Component {
       notes: [
         ...this.state.notes,
         {
+          title:     action.note,
+        },
+      ],
+    })
+  }
+  /*say_word (action) {
+    console.log('say_word', action);
+    this.setState({
+      notes: [
+        ...this.state.notes,
+        {
           id:        Math.random().toString(36).substring(7),
           title:     action.note,
           completed: false,
         },
       ],
     })
-  }
+  }*/
   render() {
     console.log('render');
+    
     return (
       <Router>
             <Routes>
               <Route path="/" element={ 
               <Evolves 
                   onEvolve={ (note)=>{this.evolve_choose({ type: "evolve_choose", note }); } }
+                  onChangeEv = {(this.state)}
                   />} />
               <Route path="/unit" element={
               <Units 
                   onUnit={ (note)=>{this.unit_choose({ type: "unit_choose", note }); } }
+                  onChangeUn = {(this.state)}
                   />} />
               <Route path="/modes" element={
               <Modes
               onModes={ (note)=>{this.mode_choose({ type: "mode_choose", note }); } }
+              onChangeMode = {(this.state)}
                   />} />
               <Route path="/learning" render={this.state} element={
               <CardsLearning 
               onLearn = {(this.state)}
+              onChangeMode = {(this.state)}
               />} />
               <Route path="/repetition" render={this.state} element={<CardsRepetition 
               onRepeat = {(this.state)}/>} />
+              onWord={ (note)=>{this.say_word({ type: "say_word", note }); } }
               <Route path="/resultper" element={<Resultper />} />
               <Route path="/resultlear" element={<Resultlear />} />
 
