@@ -16,7 +16,7 @@
   padding: 50px 50px; /* Некоторый отступ */
   cursor: pointer; /* Иконка указателя/руки */
   float: left; /* Выстраиваем кнопки рядом друг с другом */
-  margin-top: 210px;
+  margin-top: 50px;
   margin-left: 75px;
   color: #222;
   font: bold 25px Arial;
@@ -45,7 +45,7 @@
   padding: 50px 50px; /* Некоторый отступ */
   cursor: pointer; /* Иконка указателя/руки */
   float: left; /* Выстраиваем кнопки рядом друг с другом */
-  margin-top: 100px;
+  margin-top: 50px;
   margin-left: 75px;
   color: #222;
   font: bold 25px Arial;
@@ -70,9 +70,9 @@
 
 .cardsOff {
   width: 340px;
-  height: 340px;
+  height: 300px;
   background: #a6c19d;
-  font: bold 40px Arial;
+  font: bold 30px Arial;
   color: green;
   margin: 20px;
   border-radius: 4px;
@@ -82,9 +82,9 @@
 
 .cardsOn {
   width: 340px;
-  height: 340px;
+  height: 300px;
   background: #61a4e7;
-  font: bold 40px Arial;
+  font: bold 30px Arial;
   color: blue;
   margin: 20px;
   border-radius: 4px;
@@ -104,7 +104,7 @@
 
 .outer-div
 {
-     padding: 100px;
+     padding: 10px;
 }
 .inner-div
 {
@@ -115,6 +115,65 @@
 
 .divModes{
   margin: auto;
-  width: 700px;
+  width: 300px;
 }
 
+.heading {
+  text-align: center; 
+}
+
+.resbtn{
+  background-color: #04AA6D; /* Зеленый фон */
+  border: 1px solid green; /* Зеленая рамка */
+  color: white; /* Белый текст */
+  padding: 50px 50px; /* Некоторый отступ */
+  cursor: pointer; /* Иконка указателя/руки */
+  float: left; /* Выстраиваем кнопки рядом друг с другом */
+  margin-top: 50px;
+  margin-left: 75px;
+  color: #222;
+  font: bold 25px Arial;
+}
+
+.startbtn{
+  text-align: center; 
+  background-color: #04AA6D; /* Зеленый фон */
+  border: 1px solid green; /* Зеленая рамка */
+  color: white; /* Белый текст */
+  padding: 0px 50px; /* Некоторый отступ */
+  cursor: pointer; /* Иконка указателя/руки */
+  float: left; /* Выстраиваем кнопки рядом друг с другом */
+  margin-top: 50px;
+  margin-left: 75px;
+  color: #222;
+  font: bold 25px Arial;
+}
+
+
+
+[data-hint] {
+  position: relative;
+  cursor: hint;
+}
+
+[data-hint]::after {
+
+    width: 300px;
+    color: #FFFFFF;
+    background-color: rgba(0,0,0,.7);
+    border-radius: 6px;
+    padding: 0px;
+    content: attr(data-hint);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 2em;
+    position:fixed;
+    top: -5px;
+    left: 230%;
+    transform: translate(-50%, 20%);
+    pointer-events: none;
+}
+
+[data-hint]:hover::after {
+    opacity: 1;
+}
