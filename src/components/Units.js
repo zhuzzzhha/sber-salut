@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import {Button} from '@salutejs/plasma-ui';
 import { Link } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 export class Units extends React.Component {
 
@@ -15,7 +16,12 @@ export class Units extends React.Component {
 
   render () {
     const { onUnit } = this.props;
-
+    const { onChangeUn } = this.props;
+    console.log("allounit", this.props.onChangeUn.notes[1].title);
+    if (this.props.onChangeUn.notes[1].title != "no") {
+      console.log(this.props.onChangeUn.notes[1].title);
+      return <Navigate to="/Modes"/>;
+    }
   return (
     
     <div className='btn-group2'>
