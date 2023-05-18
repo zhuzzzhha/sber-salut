@@ -5,26 +5,12 @@ import { Link } from "react-router-dom";
 import ReactCardFlip from "react-card-flip";
 import { Navigate } from 'react-router-dom';
 
-/*const repetitions = [
-  {
-    title: "hello",
-    correct: "привет",
-  },
-  {
-    title: "goodbye",
-    correct: "пока",
-  },
-  {
-    title: "bear",
-    correct: "медведь",
-  }
-]; */
 let data = require('./data.json');
 console.log(data)
   function get_data(evolve, unit){
     const result = data[evolve][unit];
     let json_data = []
-    for (let i = 0; i < result.length - 2; i++) {
+    for (let i = 0; i < result.length - 2; i+=2) {
       var newDict = {
         "title": result[i],
         "correct": result[i+1]
