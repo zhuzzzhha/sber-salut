@@ -3,22 +3,26 @@ import { useState } from "react";
 import { Button } from "@salutejs/plasma-ui";
 import { Link } from "react-router-dom";
 
-function Resultlear() {
-  return (
-    <div>
-      <h1 className="heading">Поздравляем, ты прошел изучение!</h1>
-      <Button data-hint="Чтобы начать изучать слова тебе нужно выбрать evolve, unit и нажать start.">
+
+
+function Resultlear()  {
+  function handleClick() {
+    window.location.href = '/';
+  }
+
+    return (
+      <div>
+        <h1 className="heading">Поздравляем, изучение пройдено!</h1>
+        <Button data-hint="Чтобы начать изучать слова нужно сказать команду 'Запусти салют демо апп' и выбрать evolve, unit и нажать start.">
           Помощь
         </Button>
-      <div className="btn-group">
-        <div className="divModes">
-          <Link to="/">
-            <Button>Выход</Button>
-          </Link>
+        <div className="btn-group">
+          <div className="divModes">
+            <Button onClick={handleClick}>Выход</Button>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
 }
 
 export default Resultlear;
