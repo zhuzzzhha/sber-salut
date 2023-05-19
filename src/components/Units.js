@@ -17,6 +17,7 @@ export class Units extends React.Component {
   render () {
     const { onUnit } = this.props;
     const { onChangeUn } = this.props;
+    
     if (this.props.onChangeUn.notes[1].title != "no" && this.props.onChangeUn.notes[0].title != Object) {
       console.log(this.props.onChangeUn.notes[1].title);
       return <Navigate to="/Modes"/>;
@@ -24,7 +25,7 @@ export class Units extends React.Component {
     return (
       <div>
         <h1 className="heading">Выбери свой Unit</h1>
-        <Button data-hint="Чтобы начать изучать слова тебе нужно выбрать evolve, unit и нажать start.">
+        <Button data-hint="Чтобы начать изучать слова тебе нужно сказать команду 'Запусти салют демо апп' и выбрать evolve, unit и нажать start.">
           Помощь
         </Button>
         <div className="btn-group2">
