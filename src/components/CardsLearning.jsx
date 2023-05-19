@@ -10,7 +10,7 @@ console.log(data)
   function get_data(evolve, unit){
     const result = data[evolve][unit];
     let json_data = []
-    for (let i = 0; i < result.length - 2; i+=2) {
+    for (let i = 0; i < result.length - 2; i+=2 ) {
       var newDict = {
         "title": result[i],
         "correct": result[i+1]
@@ -29,7 +29,6 @@ function Result() {
 }
 
 function CardsLearning(props) { 
-  /*console.log(props.onLearn.notes[0].title);*/
   let evolve = "evolve_1";
   let unit = "unit_1";
   console.log("cardslearning", props.onLearn);
@@ -39,6 +38,7 @@ function CardsLearning(props) {
   if (props.onLearn.notes[1].title != "no"&& props.onLearn.notes[1].title!= Object){
   unit = "unit_" + String(props.onLearn.notes[1].title);
   }
+  
   const repetitions = get_data(evolve, unit);
   const [step, setStep] = useState(0);
   const repetition = repetitions[step]; 
@@ -47,9 +47,13 @@ function CardsLearning(props) {
   const [flip, setFlip] = useState(false);
   const handleButtonClick = () => {
     setFlip(!flip);
-    setStep(step + 1);
+    setStep(step + 2);
   };
-
+  if (props.onLearn.notes.length > 3 && props.onLearn.notes[3].title!= "no" && props.onLearn.notes[3].title!= Object){
+    return (
+      <Navigate to="/Evolve" />
+      );
+    } 
   return (
     <div className="outer-div">
       <div className="inner-div">
@@ -76,7 +80,7 @@ function CardsLearning(props) {
                 <Button className="cardsButton">Узнать результат</Button>
               </Link>
             ) : (
-              <>
+              <>  
                 <Button
                   className="cardsButton"
                   onClick={() => handleButtonClick()}
