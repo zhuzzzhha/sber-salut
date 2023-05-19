@@ -85,6 +85,8 @@ export class App extends React.Component {
 
         case 'mode_choose':
           return this.mode_choose(action);
+        case 'end':
+          return this.end(action);
 
         default:
           throw new Error();
@@ -128,8 +130,8 @@ export class App extends React.Component {
       ],
     })
   }
-  say_word (action) {
-    console.log('say_word', action);
+  end (action) {
+    console.log('end', action);
     this.setState({
       notes: [
         ...this.state.notes,
@@ -164,6 +166,7 @@ export class App extends React.Component {
                   />} />
               <Route path="/learning" render={this.state} element={
               <CardsLearning 
+              onLearns={ (note)=>{this.end({ type: "end", note }); } }
               onLearn = {(this.state)}
               />} />
               <Route path="/resultlear" element={<Resultlear />} />
