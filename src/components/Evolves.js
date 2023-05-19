@@ -1,32 +1,31 @@
-import React from 'react';
-import { useState } from 'react';
-import {Button} from '@salutejs/plasma-ui';
-import { Link } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
+import React from "react";
+import { useState } from "react";
+import { Button } from "@salutejs/plasma-ui";
+import { Link } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 export class Evolves extends React.Component {
-
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
-      note: '',
-    }
+      note: "",
+    };
   }
- 
 
-  render () {
+  render() {
     const { onEvolve } = this.props;
     const { onChangeEv } = this.props;
-   if (this.props.onChangeEv.notes[0].title != "no" && this.props.onChangeEv.notes[0].title != Object) {
+    console.log("alloevolve", this.props.onChangeEv.notes[0].title);
+    if (this.props.onChangeEv.notes[0].title != "no") {
       return (
       <Navigate to="/Unit" />
       );
     }
-  
+
     return (
       <div>
         <h1 className="heading">Выбери свой Evolve</h1>
-        <Button data-hint="Чтобы начать изучать слова тебе нужно выбрать evolve, unit и нажать start.">
+        <Button data-hint="Чтобы начать изучать слова тебе нужно сказать команду 'Запусти салют демо апп' и выбрать evolve, unit и нажать start.">
           Помощь
         </Button>
         <div className="btn-group">
