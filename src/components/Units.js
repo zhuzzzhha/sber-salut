@@ -1,24 +1,25 @@
-import React from "react";
-import { useState } from "react";
-import { Button } from "@salutejs/plasma-ui";
-import { Link } from "react-router-dom";
-import { Navigate } from "react-router-dom";
+import React from 'react';
+import { useState } from 'react';
+import {Button} from '@salutejs/plasma-ui';
+import { Link } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 export class Units extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      note: "",
-    };
-  }
 
-  render() {
+  constructor (props) {
+    super(props)
+    this.state = {
+      note: '',
+    }
+  }
+ 
+
+  render () {
     const { onUnit } = this.props;
     const { onChangeUn } = this.props;
-    console.log("allounit", this.props.onChangeUn.notes[1].title);
-    if (this.props.onChangeUn.notes[1].title != "no") {
+    if (this.props.onChangeUn.notes[1].title != "no" && this.props.onChangeUn.notes[0].title != Object) {
       console.log(this.props.onChangeUn.notes[1].title);
-      return <Navigate to="/Modes" />;
+      return <Navigate to="/Modes"/>;
     }
     return (
       <div>
