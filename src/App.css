@@ -170,7 +170,7 @@
     position:fixed;
     top: -5px;
     left: 230%;
-    transform: translate(-50%, 20%);
+    transform: translate(-50%, -5%);
     pointer-events: none;
 }
 
