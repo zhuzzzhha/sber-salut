@@ -47,7 +47,7 @@ function CardsLearning(props) {
   const [flip, setFlip] = useState(false);
   const handleButtonClick = () => {
     setFlip(!flip);
-    setStep(step + 2);
+    setStep(step + 1);
   };
   if (props.onLearn.notes.length > 3 && props.onLearn.notes[3].title!= "no" && props.onLearn.notes[3].title!= Object){
     return (
