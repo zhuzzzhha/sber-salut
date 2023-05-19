@@ -76,7 +76,7 @@ function CardsLearning(props) {
             <br />
 
             {step == len - 1 ? (
-              <Link to="/resultper">
+              <Link to="/resultlear">
                 <Button className="cardsButton">Узнать результат</Button>
               </Link>
             ) : (
