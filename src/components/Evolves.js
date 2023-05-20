@@ -33,7 +33,7 @@ export class Evolves extends React.Component {
             <Link to="/Unit">
               <Button
                 key={num}
-                onClick={() => this.props.onEvolve({ note: num })}
+                onClick={() => this.props.onEvolve(num)}
               >
                 {num}
               </Button>
