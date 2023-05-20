@@ -25,7 +25,7 @@ export class Evolves extends React.Component {
     return (
       <div>
         <h1 className="heading">Выбери свой Evolve</h1>
-        <Button data-hint="Чтобы начать изучать слова тебе нужно сказать команду 'Запусти салют демо апп' и выбрать evolve, unit и нажать start.">
+        <Button data-hint="Чтобы начать изучать слова нужно сказать команду 'Запусти салют демо апп' и выбрать evolve, unit и нажать start.">
           Помощь
         </Button>
         <div className="btn-group">
