@@ -17,6 +17,7 @@ export class Modes extends React.Component {
 
   render () {
     const { onChangeMode } = this.props;
+    console.log(this.props.onChangeMode);
     if (
       this.props.onChangeMode.notes.length > 2 &&
       this.props.onChangeMode.notes[2].title != "no" &&
