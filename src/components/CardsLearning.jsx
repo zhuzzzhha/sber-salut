@@ -20,14 +20,6 @@ console.log(data)
     return json_data
   }
 
-function Result() {
-  return (
-    <Link to="/resultper">
-      <h1>hey</h1>
-    </Link>
-  );
-}
-
 function CardsLearning(props) { 
   let evolve = "evolve_1";
   let unit = "unit_1";
