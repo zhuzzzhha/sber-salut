@@ -33,7 +33,7 @@ export class Units extends React.Component {
             <Link to="/Modes">
               <Button
                 key={num}
-                onClick={() => this.props.onUnit(num)}
+                onClick={() => this.props.onUnit(num )} 
               >
                 {num}
               </Button>
