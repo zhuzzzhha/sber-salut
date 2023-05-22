@@ -10,7 +10,6 @@ import Evolves from "./components/Evolves"
 import Units from "./components/Units"
 import CardsLearning from "./components/CardsLearning"
 import Modes from "./components/Modes"
-import Resultper from "./components/Resultper"
 import Resultlear from "./components/Resultlear"
 import { BrowserRouter as Router,Route,Routes,useLocation } from 'react-router-dom';
 import "./App.css";
