@@ -13,7 +13,7 @@ function Resultlear()  {
     return (
       <div>
         <h1 className="heading">Поздравляем, изучение пройдено!</h1>
-        <Button data-hint="Чтобы начать изучать слова нужно сказать команду 'Запусти английский в мисис' и выбрать evolve, unit и нажать start.">
+        <Button data-hint="Чтобы начать изучать слова нужно сказать команду 'Запусти английский в мисис' и выбрать уровень и раздел.">
           Помощь
         </Button>
         <div className="btn-group">
