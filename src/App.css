@@ -69,10 +69,10 @@
 }
 
 .cardsOff {
-  width: 340px;
-  height: 300px;
+  width: 240px;
+  height: 200px;
   background: #a6c19d;
-  font: bold 30px Arial;
+  font: bold 25px Arial;
   color: green;
   margin: 20px;
   border-radius: 4px;
@@ -81,10 +81,10 @@
 }
 
 .cardsOn {
-  width: 340px;
-  height: 300px;
+  width: 240px;
+  height: 200px;
   background: #61a4e7;
-  font: bold 30px Arial;
+  font: bold 25px Arial;
   color: blue;
   margin: 20px;
   border-radius: 4px;
@@ -93,7 +93,7 @@
 }
 
 .cardsButton{
-  width: 150px;
+  width: 120px;
   padding: 10px;
   font-size: 20px;
   background: #a14490;
