@@ -28,9 +28,6 @@ export class Modes extends React.Component {
     return (
       <div>
         <h1 className="heading">Нажми start</h1>
-        <Button data-hint="Чтобы начать изучать слова нужно сказать команду 'Запусти английский в мисис' и выбрать уровень и раздел.">
-          Помощь
-        </Button>
         <div className="btn-group">
           <div className="divModes">
             <Link to="/learning">
