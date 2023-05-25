@@ -49,6 +49,9 @@ function CardsLearning(props) {
   return (
     <div className="outer-div">
       <div className="inner-div">
+                    <div className="divModes">
+          <Button onClick={() => handleClick()}>Назад</Button>
+        </div>
         <ReactCardFlip isFlipped={flip} flipDirection="vertical">
           <div className="cardsOff">
             {repetitions[step].title}
