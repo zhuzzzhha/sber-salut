@@ -25,6 +25,7 @@ export class Evolves extends React.Component {
     return (
       <div>
         <h1 className="heading">Выбери свой уровень</h1>
+      <p>   </p>
         <div className="btn-group">
           {[1, 2, 3, 4, 5, 6].map((num) => (
             <Link to="/Unit">
@@ -37,6 +38,10 @@ export class Evolves extends React.Component {
             </Link>
           ))}
         </div>
+<div class="background">
+    <div class="transparent">Прозрачный текст</div>
+ <div class="transparent">Прозрачный текст</div>
+</div>
       </div>
     );
   }
