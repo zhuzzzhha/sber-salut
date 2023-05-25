@@ -5,6 +5,10 @@ import { Link } from "react-router-dom";
 import ReactCardFlip from "react-card-flip";
 import { Navigate } from 'react-router-dom';
 
+function handleClick() {
+  window.location.href = '/';
+}
+
 let data = require('./data.json');
 console.log(data)
   function get_data(evolve, unit){
