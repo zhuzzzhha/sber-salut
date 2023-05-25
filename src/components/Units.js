@@ -4,6 +4,10 @@ import {Button} from '@salutejs/plasma-ui';
 import { Link } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 
+function handleClick() {
+  window.location.href = '/';
+}
+
 export class Units extends React.Component {
 
   constructor (props) {
