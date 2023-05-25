@@ -25,6 +25,9 @@ export class Units extends React.Component {
     return (
       <div>
         <h1 className="heading">Выбери свой раздел</h1>
+                    <div className="divModes">
+          <Button onClick={() => handleClick()}>Назад</Button>
+        </div>
         <div className="btn-group2">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((num) => (
             <Link to="/Modes">
@@ -37,6 +40,10 @@ export class Units extends React.Component {
             </Link>
           ))}
         </div>
+<div class="background">
+    <div class="transparent">Прозрачный текст</div>
+ <div class="transparent">Прозрачный текст</div>
+</div>
       </div>
     );
   }
