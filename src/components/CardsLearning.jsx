@@ -6,7 +6,7 @@ import ReactCardFlip from "react-card-flip";
 import { Navigate } from 'react-router-dom';
 
 function handleClick() {
-  window.location.href = '/';
+  window.location.href = '/unit';
 }
 
 let data = require('./data.json');
