@@ -34,14 +34,14 @@ export class Units extends React.Component {
         </div>
         <div className="btn-group2">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((num) => (
-            <Link to="/learning">
+
               <Button
                 key={num}
                 onClick={() => this.props.onUnit(num )} 
               >
                 {num}
               </Button>
-            </Link>
+
           ))}
         </div>
 <div class="background">
