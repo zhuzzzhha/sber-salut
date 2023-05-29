@@ -56,13 +56,13 @@ function CardsLearning(props) {
     props.onLearn.notes[3].title != "no" &&
     props.onLearn.notes[3].title != Object
   ) {
-    return <Navigate to="/Evolve" />;
+    return <Navigate to="/" />;
   }
 
   return (
     <div>
       <div className="btn-group1">
-        <Button onClick={() => handleClick()}>Назад</Button>
+        <Button onClick={() => handleClick()}>К началу</Button>
       </div>
       <div className="btn-group2">
         <ReactCardFlip isFlipped={flip} flipDirection="vertical">
