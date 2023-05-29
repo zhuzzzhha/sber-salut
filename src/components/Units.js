@@ -15,10 +15,17 @@ export class Units extends React.Component {
   }
 
   render() {
+    let unit = 1;
+    if (this.props.onChangeUn.notes[0].title !== "no")
+    {
+      unit = this.props.onChangeUn.notes[0].title;
+    }
     if (
       this.props.onChangeUn.notes[1].title !== "no" &&
       this.props.onChangeUn.notes[0].title !== Object
+      
     ) {
+      
       console.log(this.props.onChangeUn.notes[1].title);
       return <Navigate to="/learning" />;
     }
@@ -27,6 +34,9 @@ export class Units extends React.Component {
         <h1 className="heading">Выбери свой раздел</h1>
         <div className="btn-group1">
           <Button onClick={() => handleClick()}>Назад</Button>
+        </div>
+        <div class="rectangle">
+          <span>Уровень: {unit} </span>
         </div>
         <div className="btn-group">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((num) => (
@@ -39,6 +49,7 @@ export class Units extends React.Component {
           <div class="transparent">Прозрачный текст</div>
           <div class="transparent">Прозрачный текст</div>
         </div>
+
       </div>
     );
   }
