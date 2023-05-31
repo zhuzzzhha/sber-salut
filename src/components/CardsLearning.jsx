@@ -4,7 +4,7 @@ import { Button, h1 } from "@salutejs/plasma-ui";
 import { Link } from "react-router-dom";
 import ReactCardFlip from "react-card-flip";
 import { Navigate } from "react-router-dom";
-
+import { fonts } from "@salutejs/plasma-tokens";
 
 let data = require("./data.json");
 let num_evolve = 1;
@@ -28,7 +28,6 @@ function handleClick() {
 }
 
 function CardsLearning(props) {
-  const { onBackCards } = props;
   let evolve = "evolve_1";
   let unit = "unit_1";
   console.log("cardslearning", props.onLearn);
@@ -68,9 +67,10 @@ function CardsLearning(props) {
   return (
     <div>
       <div className="btn-group1">
-        <Button onClick={() => props.onBackCards('back')}>Назад</Button>
+        <Button onClick={() => handleClick()}>Назад</Button>
       </div>
-      <div class="rectangle">
+      <br />
+      <div class="heading">
           <span>Уровень: {num_evolve} </span>
           <span>Раздел: {num_unit} </span>
         </div>
