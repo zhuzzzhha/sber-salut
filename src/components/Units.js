@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@salutejs/plasma-ui";
 import { Navigate } from "react-router-dom";
+
 function handleClick() {
   window.location.href = "/";
 }
@@ -33,7 +34,7 @@ export class Units extends React.Component {
         <div className="btn-group1">
           <Button onClick={() => handleClick()}>Назад</Button>
         </div>
-        <div class="rectangle">
+        <div class="heading">
           <span>Уровень: {unit} </span>
         </div>
         <div className="btn-group">
