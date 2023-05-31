@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "@salutejs/plasma-ui";
 import { Navigate } from "react-router-dom";
-
 function handleClick() {
   window.location.href = "/";
 }
