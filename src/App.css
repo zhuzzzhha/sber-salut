@@ -6,7 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  }
+}
 
 .btn-group button {
   text-align: center;
@@ -30,6 +30,9 @@
 .btn-group1 {
   text-align: center;
   font: bold 3vh Arial;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btn-group1 button {
@@ -47,7 +50,19 @@
   background-color: #366a1a;
 }
 
+/* .btn-group2 button:hover {
+  background-color: #7729c0;
+} */
+
+.btn-group2 button:active,
+.btn-group2 button:focus {
+    background-color: rgb(186, 126, 229);
+  outline: none;
+  box-shadow: none;
+} 
+
 .btn-group2 {
+  background-color: rgb(186, 126, 229);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -65,10 +80,6 @@
   margin: 10px; 
   width: 25vh;
   height: 10vh;
-}
-
-.btn-group2 button:hover {
-  background-color: #7729c0;
 }
 
 .btn-group3 {
@@ -110,7 +121,6 @@
 }
 
 .cardsOn {
-  backface-visibility: hidden;
   min-width: 45vh;
   min-height: 35vh;
   width: 250px;
