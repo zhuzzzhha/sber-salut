@@ -91,6 +91,8 @@ export class App extends React.Component {
 
         case "back":
           return this.as_back(action);
+        case "back_card":
+          return this.ui_back_unit(action);
 
         // case "learn_translate":
         //   return this.learn_translate(action);
@@ -156,6 +158,11 @@ export class App extends React.Component {
     console.log("ui_back_evolve");
     this._send_action("evolve_start_2", {});
     this.props.navigate(`/evolve`)
+  }
+  ui_back_unit({evolve}) {
+    console.log("ui_back_unit");
+    this._send_action("unit_start_2", {});
+    this.props.navigate(`/evolve/${evolve}/unit`)
   }
 
   //
