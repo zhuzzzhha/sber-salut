@@ -59,6 +59,7 @@ function CardsLearning(props) {
         <span>Уровень: {evolve} </span>
         <span>Раздел: {unit} </span>
       </div>
+      <div className="step-cards">{step + 1}/{len}</div>
     </>
   )
 
