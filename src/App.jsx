@@ -215,7 +215,7 @@ export class App extends React.Component {
 
   ui_learn_loaded(params) {
     console.log("ui_learn_loaded", params);
-    this._send_action("learn_start_2", params);
+    this._send_action("learn_start_1", params);
   }
 
   ui_learn_next(params) {
@@ -229,6 +229,7 @@ export class App extends React.Component {
   }
 
   _learn_next(params) {
+  
     console.log("_learn_next", params);
     const {evolve, unit, step, flip, word} = params;
     let s = parseInt(step);
