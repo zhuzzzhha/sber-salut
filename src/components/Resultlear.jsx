@@ -1,23 +1,22 @@
 import React from "react";
-import { useState } from "react";
-import { Button } from "@salutejs/plasma-ui";
-import { Link } from "react-router-dom";
+import {Button} from "@salutejs/plasma-ui";
 
 
-
-function Resultlear()  {
-  function handleClick() {
-    window.location.href = '/';
-  }
-
-    return (
-      <div>
-        <h1 className="heading">Поздравляем, изучение пройдено!</h1>
-        <div className="btn-group1">
-          <Button onClick={() => handleClick()}>К началу</Button>
-        </div>
+function Resultlear(props) {
+  const {onRestart} = props;
+  return (
+    <div>
+      <h1 className="heading">Поздравляем, изучение пройдено!</h1>
+      <div className="btn-group1">
+        {/*<Button onClick={() => handleClick()}>К началу</Button>*/}
+        <Button
+          onClick={() => onRestart()}
+        >
+          К началу
+        </Button>
       </div>
-    );
+    </div>
+  );
 }
 
 export default Resultlear;
