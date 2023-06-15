@@ -125,10 +125,8 @@ function CardsLearning(props) {
     <div className={`cardsOn`}>
       {repetitions[step].correct}
       <br/>
-      <br/>
       <FlipBackButton/>
       <br/>
-      {isFirstWord ? <></> : <PrevButton/>}
     </div>
   )
 
