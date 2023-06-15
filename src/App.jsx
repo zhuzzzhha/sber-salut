@@ -152,6 +152,7 @@ export class App extends React.Component {
     console.log("ui_back");
     this.props.navigate(-1)
   }
+ 
 
   //
 
@@ -324,7 +325,7 @@ export class App extends React.Component {
           element={
             <CardsLearning
               onOpen={(params) => this.ui_learn_loaded(params)}
-              onBack={(params) => this.ui_back(params)}
+              onBack={(params) => this._evolve_choose(params)}
               onNext={(params) => this.ui_learn_next(params)}
               onPrev={(params) => this.ui_learn_prev(params)}
               onFlip={(params) => this.ui_learn_flip(params)}
