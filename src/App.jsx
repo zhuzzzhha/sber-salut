@@ -152,7 +152,11 @@ export class App extends React.Component {
     console.log("ui_back");
     this.props.navigate(-1)
   }
- 
+  ui_back_evolve({evolve}) {
+    console.log("ui_back_evolve");
+    this._send_action("evolve_start_2", {});
+    this.props.navigate(`/evolve`)
+  }
 
   //
 
@@ -313,7 +317,7 @@ export class App extends React.Component {
           element={
             <Units
               onOpen={({evolve}) => this.ui_unit_loaded({evolve})}
-              onBack={(evolve) => this.ui_back(evolve)}
+              onBack={(evolve) => this.ui_back_evolve(evolve)}
               onChoose={({evolve, unit}) => this.ui_unit_choose({evolve, unit})}
             />
           }
