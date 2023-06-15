@@ -128,8 +128,6 @@ function CardsLearning(props) {
       <br/>
       <FlipBackButton/>
       <br/>
-      {isLastWord ? <ResultButton/> : <NextButton/>}
-      <br/>
       {isFirstWord ? <></> : <PrevButton/>}
     </div>
   )
