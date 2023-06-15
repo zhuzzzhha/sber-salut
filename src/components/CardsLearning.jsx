@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Button} from "@salutejs/plasma-ui";
 import {useParams} from "react-router-dom";
 import ReactCardFlip from "react-card-flip";
-
+import { useNavigate } from "react-router-dom";
 let data = require("./data.json");
 
 // console.log(data);
@@ -22,9 +22,7 @@ export function get_data(evolve, unit) {
   }
   return json_data;
 }
-function handleClick() {
-  navigate(`/evolve/${evolve}/unit`);
-}
+
 
 function CardsLearning(props) {
   const {evolve, unit, step: strStep, flip} = useParams();
@@ -49,15 +47,18 @@ function CardsLearning(props) {
 
   const Header = () => (
     <>
-       <div className="btn-group1">
-        <Button onClick={() => handleClick()}>Назад</Button>
+      <div className="btn-group1">
+        <Button
+          onClick={() => onBack({evolve, unit, step, flip, word})}
+        >
+          Назад
+        </Button>
       </div>
       <br/>
       <div className="heading">
         <span>Уровень: {evolve} </span>
         <span>Раздел: {unit} </span>
       </div>
-      <div className="step-cards">{step + 1}/{len}</div>
     </>
   )
 
