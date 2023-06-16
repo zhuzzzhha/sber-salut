@@ -215,7 +215,7 @@ export class App extends React.Component {
 
   ui_learn_loaded(params) {
     console.log("ui_learn_loaded", params);
-    this._send_action("learn_start_1", params);
+    this._send_action("learn_start_2", params);
   }
 
   ui_learn_next(params) {
@@ -336,7 +336,7 @@ export class App extends React.Component {
           // render={this.state}
           element={
             <CardsLearning
-              onOpen={(params) => this.ui_learn_loaded(params)}
+              onOpen={(params) => this.as_started(params)}
               onBack={(params) => this._evolve_choose(params)}
               onNext={(params) => this.ui_learn_next(params)}
               onPrev={(params) => this.ui_learn_prev(params)}
