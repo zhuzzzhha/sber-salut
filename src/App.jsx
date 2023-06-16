@@ -267,6 +267,10 @@ export class App extends React.Component {
     const {evolve, unit, step, flip, word} = params;
     this.props.navigate(`/resultlear`);
   }
+  _go_back_card(params){
+    const {evolve, unit, step, flip, word} = params;
+    this.props.navigate(`/evolve/${evolve}/unit`);
+  }
 
 
   as_learn_flip(action) {
