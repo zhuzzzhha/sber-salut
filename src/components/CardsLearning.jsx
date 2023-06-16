@@ -1,152 +1,360 @@
-import React, {useEffect, useState} from "react";
-import {Button} from "@salutejs/plasma-ui";
-import {useParams} from "react-router-dom";
-import ReactCardFlip from "react-card-flip";
-import { useNavigate } from "react-router-dom";
-let data = require("./data.json");
+import React from "react";
 
-// console.log(data);
+import {createAssistant, createSmartappDebugger} from "@salutejs/client";
+import Evolves from "./components/Evolves";
+import Units from "./components/Units";
+import CardsLearning, {get_data} from "./components/CardsLearning";
+import Resultlear from "./components/Resultlear";
+import {Navigate, Route, Routes,} from "react-router-dom";
 
-export function get_data(evolve, unit) {
-  const evolve_key = "evolve_" + evolve;
-  const unit_key = "unit_" + unit;
-  // console.log(`get_data: evolve: ${evolve_key} unit: ${unit_key}`);
-  const result = data[evolve_key][unit_key];
-  let json_data = [];
-  for (let i = 0; i < result.length; i += 2) {
-    const newDict = {
-      title: result[i],
-      correct: result[i + 1],
-    };
-    json_data.push(newDict);
-  }
-  return json_data;
-}
+import "./App.css";
 
 
-function CardsLearning(props) {
-  const {evolve, unit, step: strStep, flip} = useParams();
-  const {onOpen, onBack, onNext, onPrev, onFlip, onResult} = props;
-
-  const step = parseInt(strStep);
+function getWordCount({evolve, unit}) {
   const repetitions = get_data(evolve, unit);
-  const len = repetitions.length;
-  const word = repetitions[step].title
-
-  // const [flip, setFlip] = useState(false);
-
-  useEffect(() => {
-    // console.log("CardsLearning:: useEffect", {evolve, unit, step, word});
-    onOpen({evolve, unit, step, flip, word});
-    return () => {
-    };
-  }, [evolve, unit, step, flip, word]);
-
-  const isLastWord = step >= len - 1;
-  const isFirstWord = step <= 0;
-
-  const Header = () => (
-    <>
-      <div className="btn-group1">
-        <Button
-          onClick={() => onBack({evolve, unit, step, flip, word})}
-        >
-          Назад
-        </Button>
-      </div>
-      <br/>
-      <div className="heading">
-        <span>Уровень: {evolve} </span>
-        <span>Раздел: {unit} </span>
-      </div>
-      <div className="step-cards">{step + 1}/{len}</div>
-    </>
-  )
-
-  const TranslateButton = () => <Button
-    // onClick={() => setFlip(!flip)}
-    onClick={() => onFlip({evolve, unit, step, flip, word})}
-  >
-    Перевернуть карточку
-  </Button>
-
-  const FlipBackButton = () => <Button
-    // onClick={() => setFlip(!flip)}
-    onClick={() => onFlip({evolve, unit, step, flip, word})}
-  >
-    Перевернуть карточку
-  </Button>
-
-  const NextButton = () => {
-    // console.log("CardsLearning: NextButton render", {evolve, unit, step, word});
-
-    return <Button
-      onClick={() => {
-
-        // console.log("CardsLearning: NextButton onClick", {evolve, unit, step, word});
-
-        onNext({evolve, unit, step, flip, word})
-      }
-      }
-    >
-      Следующее слово
-    </Button>
-  }
-
-  const PrevButton = () => <Button
-    onClick={() => onPrev({evolve, unit, step, flip, word})}
-  >
-    Предыдущее слово
-  </Button>
-
-  const ResultButton = () => <Button
-    onClick={() => onResult({evolve, unit, step, flip, word})}
-  >
-    Результат
-  </Button>
-
-  const Group1 = () => (
-    // <div className={`cardsOff ${showNextCard ? "hide" : ""}`}>
-    <div className={`cardsOff`}>
-      {word}
-      <br/>
-      <br/>
-      <TranslateButton/>
-      <br/>
-      {isLastWord ? <ResultButton/> : <NextButton/>}
-      <br/>
-      {isFirstWord ? <></> : <PrevButton/>}
-    </div>
-  )
-
-
-  const Group2 = () => (
-    // <div className={`cardsOn ${showNextCard ? "show" : ""}`}>
-    <div className={`cardsOn`}>
-      {repetitions[step].correct}
-      <br/>
-      <FlipBackButton/>
-      <br/>
-    </div>
-  )
-
-  // console.log("CardsLearning: render", {evolve, unit, step, word});
-
-  return (
-    <div>
-      <Header/>
-
-      <div className="btn-group2">
-        <ReactCardFlip isFlipped={flip!=0} flipDirection="vertical">
-
-          <Group1/>
-
-          <Group2/>
-
-        </ReactCardFlip>
-      </div>
-    </div>
-  );
+  return repetitions.length;
 }
 
-export default CardsLearning;
+const initializeAssistant = (getState /*: any*/) => {
+  if (process.env.NODE_ENV === "development") {
+    return createSmartappDebugger({
+      token: process.env.REACT_APP_TOKEN ?? "",
+      initPhrase: `Запусти ${process.env.REACT_APP_SMARTAPP}`,
+      getState,
+    });
+  }
+  return createAssistant({getState});
+};
+
+export class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    console.log("App: constructor");
+    this.firstRender = true;
+    this.assistantReady = false;
+
+    this.state = {
+      // notes: [{title: "no"}, {title: "no"}, {title: "no"}],
+      // evolve: undefined,
+      // unit: undefined,
+      // assistantReady: false,
+      // firstRender: true,
+    };
+
+    this.assistant = initializeAssistant(() => this.getStateForAssistant());
+    this.assistant.on("data", (event /*: any*/) => {
+      // console.log(`assistant.on(data)`, event);
+      const {action} = event;
+      this.dispatchAssistantAction(action);
+    });
+    this.assistant.on("start", (event) => {
+      console.log(`assistant.on(start)`, event);
+      this.assistantReady = true;
+      this.as_started();
+    });
+  }
+
+  // componentDidMount() {
+  //   console.log("componentDidMount");
+  // }
+
+  getStateForAssistant() {
+    // console.log("getStateForAssistant: this.state:", this.state);
+    const state = {
+      item_selector: {
+        items: []
+        // items: this.state.notes.map(({id, title}, index) => ({
+        //   number: index + 1,
+        //   id,
+        //   title,
+        // })),
+      },
+    };
+    // console.log("getStateForAssistant: state:", state);
+    return state;
+  }
+
+
+  dispatchAssistantAction(action) {
+    // console.log("dispatchAssistantAction", action);
+    if (action) {
+      console.log("dispatchAssistantAction", action);
+
+      switch (action.type) {
+
+        case "evolve_choose":
+          return this.as_evolve_choose(action);
+
+        case "unit_choose":
+          return this.as_unit_choose(action);
+
+        case "back":
+          return this.as_back(action);
+        case "back_card":
+          return this.ui_back_unit(action);
+
+        // case "learn_translate":
+        //   return this.learn_translate(action);
+
+        case "learn_flip":
+          return this.as_learn_flip(action);
+
+        case "learn_next":
+          return this.as_learn_next(action);
+
+        case "learn_prev":
+          return this.as_learn_prev(action);
+
+        case "end":
+          return this.as_end(action);
+
+        default:
+          throw new Error();
+      }
+    }
+  }
+
+  _send_action(action_id, value) {
+    console.log(`_send_action "${action_id}", value:`, value);
+    if (!this.assistantReady) {
+      console.warn(`_send_action: assistant not ready, action_id: "${action_id}"`)
+      return
+    }
+    const data = {
+      action: {
+        action_id: action_id,
+        parameters: value
+        // parameters: {
+        //   // значение поля parameters может любым, но должно соответствовать серверной логике
+        //   value: value, // см.файл src/sc/noteDon;e.sc смартаппа в Studio Code
+        // },
+      },
+    };
+    const unsubscribe = this.assistant.sendData(data, (data) => {
+      // функция, вызываемая, если на sendData() был отправлен ответ
+      const {type, payload} = data;
+      console.log("sendData onData:", type, payload);
+      unsubscribe();
+    });
+  }
+
+  //
+
+  as_started() {
+    this._send_action("evolve_start_1", {});
+  }
+
+  as_back(action) {
+    console.log("as_back");
+    this.props.navigate(-1)
+  }
+
+  ui_back({evolve}) {
+    console.log("ui_back");
+    this.props.navigate(-1)
+  }
+  ui_back_evolve({evolve}) {
+    console.log("ui_back_evolve");
+    this._send_action("evolve_start_2", {});
+    this.props.navigate(`/evolve`)
+  }
+  ui_back_unit({evolve}) {
+    console.log("ui_back_unit");
+    this._send_action("unit_start_2", {});
+    this.props.navigate(`/evolve/${evolve}/unit`)
+  }
+
+  //
+
+  ui_evolve_loaded() {
+    console.log("ui_evolve_loaded");
+    this._send_action("evolve_start_2", {});
+  }
+
+  as_evolve_choose(action) {
+    console.log("as_evolve_choose", action);
+    const evolve = action.params.evolve || 1;
+    this._evolve_choose({evolve});
+  }
+
+  ui_evolve_choose({evolve}) {
+    console.log("ui_evolve_choose", {evolve});
+    this._evolve_choose({evolve});
+  }
+
+  _evolve_choose({evolve}) {
+    console.log("_evolve_choose", {evolve});
+    this.props.navigate(`/evolve/${evolve}/unit`);
+  }
+
+  //
+
+  ui_unit_loaded({evolve}) {
+    console.log("ui_unit_loaded");
+    this._send_action("unit_start_2", {evolve});
+  }
+
+  as_unit_choose(action) {
+    console.log("as_unit_choose: action:", action);
+    this._unit_choose(action.params)
+  }
+
+  ui_unit_choose(params) {
+    console.log("ui_unit_choose:", params);
+    this._unit_choose(params)
+  }
+
+  _unit_choose(params) {
+    const {evolve, unit} = params;
+    console.log("_unit_choose:", params);
+    this.props.navigate(`/evolve/${evolve}/unit/${unit}/step/0/flip/0`);
+  }
+
+  //
+
+  ui_learn_loaded(params) {
+    console.log("ui_learn_loaded", params);
+    this._send_action("learn_start_2", params);
+  }
+
+  ui_learn_next(params) {
+    console.log("ui_learn_next", params);
+    this._learn_next(params);
+  }
+
+  as_learn_next(action) {
+    console.log("as_learn_next", action);
+    this._learn_next(action.params);
+  }
+
+  _learn_next(params) {
+  
+    console.log("_learn_next", params);
+    const {evolve, unit, step, flip, word} = params;
+    let s = parseInt(step);
+    if (s < getWordCount({evolve, unit}) - 1) {
+      s += 1;
+    } else {
+      console.warn('_learn_next: at the end.');
+    }
+    this.props.navigate(`/evolve/${evolve}/unit/${unit}/step/${s}/flip/0`);
+  }
+
+  as_learn_prev(action) {
+    console.log("as_learn_prev", action);
+    this._learn_prev(action.params)
+  }
+
+  ui_learn_prev(params) {
+    console.log("ui_learn_prev", params);
+    this._learn_prev(params)
+  }
+
+  _learn_prev(params) {
+    console.log("_learn_prev", params);
+    const {evolve, unit, step, flip, word} = params;
+    let s = parseInt(step);
+    if (s > 0) {
+      s -= 1;
+    } else {
+      console.warn('_learn_prev: at the start.')
+    }
+    this.props.navigate(`/evolve/${evolve}/unit/${unit}/step/${s}/flip/0`);
+  }
+
+
+  as_learn_flip(action) {
+    console.log("as_learn_flip", action);
+    this._learn_flip(action.params);
+  }
+
+  ui_learn_flip(params) {
+    console.log("as_learn_flip", params);
+    this._learn_flip(params);
+  }
+
+  _learn_flip(params) {
+    console.log("_learn_flip", params);
+    const {evolve, unit, step, flip, word} = params;
+    const f = flip == "0" ? 1 : 0;
+    this.props.navigate(`/evolve/${evolve}/unit/${unit}/step/${step}/flip/${f}`);
+  }
+
+  ui_result(params) {
+    console.log("ui_result", params);
+    this.props.navigate(`/resultlear`);
+  }
+
+  ui_restart(params) {
+    console.log("ui_restart", params);
+    this.props.navigate(`/`);
+  }
+
+  render() {
+    console.log("render");
+
+    if (this.firstRender) {
+      console.log("firstRender: Navigate to=/");
+      this.firstRender = false;
+      return (
+        <Navigate to={'/'}/>
+      )
+    }
+
+    return (
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={<Navigate to="/evolve"/>}
+        />
+
+        <Route
+          path="/evolve"
+          element={
+            <Evolves
+              onOpen={() => this.ui_evolve_loaded()}
+              onChoose={({evolve}) => this.ui_evolve_choose({evolve})}
+            />
+          }
+        />
+
+        <Route
+          path="/evolve/:evolve/unit"
+          element={
+            <Units
+              onOpen={({evolve}) => this.ui_unit_loaded({evolve})}
+              onBack={(evolve) => this.ui_back_evolve(evolve)}
+              onChoose={({evolve, unit}) => this.ui_unit_choose({evolve, unit})}
+            />
+          }
+        />
+
+        <Route
+          path="/evolve/:evolve/unit/:unit/step/:step/flip/:flip"
+          // render={this.state}
+          element={
+            <CardsLearning
+              onOpen={(params) => this.as_started(params)}
+              onBack={(params) => this._evolve_choose(params)}
+              onNext={(params) => this.ui_learn_next(params)}
+              onPrev={(params) => this.ui_learn_prev(params)}
+              onFlip={(params) => this.ui_learn_flip(params)}
+              onResult={(params) => this.ui_result(params)}
+            />
+          }
+        />
+
+        <Route
+          path="/resultlear"
+          element={<Resultlear
+            onRestart={(params) => this.ui_restart()}
+          />}
+        />
+      </Routes>
+    );
+  }
+}
+
+export default App;
