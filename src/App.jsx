@@ -262,6 +262,11 @@ export class App extends React.Component {
     }
     this.props.navigate(`/evolve/${evolve}/unit/${unit}/step/${s}/flip/0`);
   }
+  _result(params) {
+    console.log("_result", params);
+    const {evolve, unit, step, flip, word} = params;
+    this.props.navigate(`/resultlear`);
+  }
 
 
   as_learn_flip(action) {
@@ -336,7 +341,7 @@ export class App extends React.Component {
           // render={this.state}
           element={
             <CardsLearning
-              onOpen={(params) => this.as_started(params)}
+              onOpen={(params) => this.ui_learn_loaded(params)}
               onBack={(params) => this._evolve_choose(params)}
               onNext={(params) => this.ui_learn_next(params)}
               onPrev={(params) => this.ui_learn_prev(params)}
