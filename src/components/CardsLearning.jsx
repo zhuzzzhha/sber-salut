@@ -336,7 +336,7 @@ export class App extends React.Component {
           // render={this.state}
           element={
             <CardsLearning
-              onOpen={(params) => this.as_started(params)}
+              onOpen={(params) => this.ui_learn_loaded(params)}
               onBack={(params) => this._evolve_choose(params)}
               onNext={(params) => this.ui_learn_next(params)}
               onPrev={(params) => this.ui_learn_prev(params)}
