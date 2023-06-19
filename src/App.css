@@ -175,6 +175,7 @@
 
 body {
   font-family: monospace;
+  overflow-y: hidden;
 }
 input[type="button"] {
   font-family: monospace;
