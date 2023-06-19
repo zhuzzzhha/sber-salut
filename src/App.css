@@ -26,11 +26,9 @@
   color: #222;
   font: bold 235% Arial;
 }
-
 .btn-group button:hover {
   background-color: #00784a;
 }
-
 .btn-group1 {
   text-align: center;
   font: bold 3vh Arial;
@@ -38,7 +36,6 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-
 .btn-group1 button {
   text-align: center;
   min-width: 8vh;
@@ -58,22 +55,18 @@
   color: hsl(0, 100%, 100%);  
   font: bold 3vh Arial;
 }
-
 .btn-group1 button:hover {
   background-color: #366a1a;
 }
-
 /* .btn-group2 button:hover {
   background-color: #7729c0;
 } */
-
 .btn-group2 button:active,
 .btn-group2 button:focus {
     background-color: rgb(186, 126, 229);
   outline: none;
   box-shadow: none;
 } 
-
 .btn-group2 {
   background-color: rgb(186, 126, 229);
   display: flex;
@@ -81,7 +74,6 @@
   justify-content: center;
   text-align: center;
 }
-
 .btn-group2 button {
   min-width: 15vh;
   min-height: 5vh;
@@ -94,11 +86,9 @@
   width: 25vh;
   height: 10vh;
 }
-
 .btn-group3 {
   text-align: center;
 }
-
 .btn-group3 button {
   text-align: center;
   min-width: 15vh;
@@ -108,11 +98,9 @@
   font: bold 3vh Arial;
   margin-top: 20vh;
 }
-
 .btn-group3 button:hover {
   background-color: #7729c0;
 }
-
 .cardsOff {
   backface-visibility: hidden;
   min-width: 45vh;
@@ -132,7 +120,6 @@
   opacity: 1;
   transition: opacity;
 }
-
 .cardsOn {
   min-width: 45vh;
   min-height: 35vh;
@@ -153,8 +140,6 @@
   opacity: 1;
   transition: opacity;
 }
-
-
 .outer-div {
   padding: 10px;
 }
@@ -163,7 +148,6 @@
   width: 300px;
   height: 100px;
 }
-
 .divModes {
   margin-left: auto;
   margin-right: auto;
@@ -171,20 +155,17 @@
   position: absolute;
   left: 50%;
 }
-
 body {
   font-family: monospace;
 }
-input[typ e="button"] {
+input[type="button"] {
   font-family: monospace;
   font: bold 40px Arial;
 }
-
 .heading {
   text-align: center;
   font: bold 4vh Arial;
 }
-
 .background {
   text-align: center;
 }
