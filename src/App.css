@@ -200,6 +200,3 @@ input[type="button"] {
   mix-blend-mode: multiply;
   display: inline-block;
 }
-::-webkit-scrollbar {
-  width: 0;
-}
