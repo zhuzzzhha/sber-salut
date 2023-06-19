@@ -1,10 +1,10 @@
 ::-webkit-scrollbar {
-  width: 0;
+  display: none;
 }
 
 :root {
   touch-action: pan-x pan-y;
-  height: 100%;
+  height: 100% 
 }
 
 .btn-group {
@@ -15,17 +15,17 @@
 
 .btn-group button {
   text-align: center;
-  background-color: #04aa6d;
-  border: 1px solid green;
-  padding: 5%;
-  flex: 0 0 150px;
-  margin: 2%;
+  background-color: #04aa6d; 
+  border: 1px solid green; 
+  padding: 50px 50px; 
+  flex: 0 0 150px; 
+  margin: 10px; 
   width: 15vh;
   height: 10vh;
-  margin-top: 5%;
+  margin-top: 50px;
   float: left;
   color: #222;
-  font: bold 3vh Arial;
+  font: bold 235% Arial;
 }
 
 .btn-group button:hover {
@@ -44,20 +44,19 @@
   text-align: center;
   min-width: 8vh;
   min-height: 2vh;
-  background-color: #8bbd41;
+  background-color: #8bbd41; 
   margin-top: 5px;
   margin-left: 10px;
   color: #222;
   font: bold 3vh Arial;
 }
-
 .step-cards {
   text-align: center;
-  min-width: 8vh;
+  min-width: 8vh; 
   min-height: 2vh;
   margin-top: 5px;
   margin-left: 10px;
-  color: hsl(0, 100%, 100%);
+  color: hsl(0, 100%, 100%);  
   font: bold 3vh Arial;
 }
 
@@ -65,12 +64,16 @@
   background-color: #366a1a;
 }
 
+/* .btn-group2 button:hover {
+  background-color: #7729c0;
+} */
+
 .btn-group2 button:active,
 .btn-group2 button:focus {
-  background-color: rgb(186, 126, 229);
+    background-color: rgb(186, 126, 229);
   outline: none;
   box-shadow: none;
-}
+} 
 
 .btn-group2 {
   background-color: rgb(186, 126, 229);
@@ -87,8 +90,8 @@
   color: white;
   font: bold 2vh Arial;
   margin-top: 2vh;
-  flex: 0 0 150px;
-  margin: 10px;
+  flex: 0 0 150px; 
+  margin: 10px; 
   width: 25vh;
   height: 10vh;
 }
@@ -152,6 +155,7 @@
   transition: opacity;
 }
 
+
 .outer-div {
   padding: 10px;
 }
@@ -195,119 +199,6 @@ input[type="button"] {
   mix-blend-mode: multiply;
   display: inline-block;
 }
-
-/* Media Queries */
-
-/* Small screens (mobile devices) */
-@media only screen and (max-width: 767px) {
-  .btn-group button {
-    font-size: 10px;
-    padding: 5px 10px;
-    flex-basis: 30%;
-    margin: 5px;
-  }
-
-  .btn-group1 button {
-    font-size: 10px;
-    min-width: 70px;
-    min-height: 20px;
-    margin-top: 5px;
-    margin-left: 5px;
-  }
-
-  .btn-group2 button {
-    min-width: 100px;
-    min-height: 30px;
-    font-size: 12px;
-    margin-top: 10px;
-  }
-
-  .btn-group3 button {
-    font-size: 12px;
-    margin-top: 10px;
-  }
-
-  .cardsOff,
-  .cardsOn {
-    min-width: 200px;
-    min-height: 150px;
-    font-size: 12px;
-    padding: 10px;
-  }
-}
-
-/* Medium screens (tablets) */
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-  .btn-group button {
-    font-size: 14px;
-    padding: 5px 15px;
-    flex-basis: 40%;
-    margin: 5px;
-  }
-
-  .btn-group1 button {
-    font-size: 12px;
-    min-width: 100px;
-    min-height: 30px;
-    margin-top: 5px;
-    margin-left: 5px;
-  }
-
-  .btn-group2 button {
-    min-width: 150px;
-    min-height: 40px;
-    font-size: 14px;
-    margin-top: 10px;
-  }
-
-  .btn-group3 button {
-    font-size: 14px;
-    margin-top: 10px;
-  }
-
-  .cardsOff,
-  .cardsOn {
-    min-width: 300px;
-    min-height: 200px;
-    font-size: 14px;
-    padding: 20px;
-  }
-}
-
-/* Large screens (desktops) */
-@media only screen and (min-width: 1024px) {
-  .btn-group button {
-    font-size: 16px;
-    padding: 50px 50px;
-    flex-basis: 150px;
-    margin: 10px;
-  }
-
-  .btn-group1 button {
-    font-size: 16px;
-    min-width: 120px;
-    min-height: 40px;
-    margin-top: 5px;
-    margin-left: 10px;
-  }
-
-  .btn-group2 button {
-    min-width: 200px;
-    min-height: 60px;
-    font-size: 16px;
-    margin-top: 20px;
-  }
-
-  .btn-group3 button {
-    font-size: 16px;
-    margin-top: 20px;
-  }
-
-  .cardsOff,
-  .cardsOn {
-    min-width: 450px;
-    min-height: 350px;
-    font-size: 16px;
-    padding: 40px;
-  }
+::-webkit-scrollbar {
+  width: 0;
 }
