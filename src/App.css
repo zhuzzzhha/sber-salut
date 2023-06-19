@@ -12,7 +12,6 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-
 .btn-group button {
   text-align: center;
   background-color: #04aa6d; 
@@ -175,9 +174,8 @@
 
 body {
   font-family: monospace;
-  overflow-y: hidden;
 }
-input[type="button"] {
+input[typ e="button"] {
   font-family: monospace;
   font: bold 40px Arial;
 }
@@ -199,4 +197,10 @@ input[type="button"] {
   color: #fff;
   mix-blend-mode: multiply;
   display: inline-block;
+}
+.wrapper{
+  width:600px;
+  overflow-y:scroll;
+  position:relative;
+  height: 300px;
 }
