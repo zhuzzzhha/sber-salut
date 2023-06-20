@@ -3,7 +3,6 @@ import {Button} from "@salutejs/plasma-ui";
 import {useParams} from "react-router-dom";
 import ReactCardFlip from "react-card-flip";
 import { useNavigate } from "react-router-dom";
-import { CustomScrollbars } from 'react-custom-scrollbars';
 let data = require("./data.json");
 
 // console.log(data);
@@ -46,14 +45,6 @@ function CardsLearning(props) {
   const isLastWord = step >= len - 1;
   const isFirstWord = step <= 0;
 
-  const HomePage = () => {
-    const renderThumbVertical = ({ style, ...props }) => {
-      const thumbStyle = {
-        backgroundColor: 'grey',
-        borderRadius: '4px',
-      };
-      return <div style={{ ...style, ...thumbStyle }} {...props} />;
-    };
   const Header = () => (
     <>
       <div className="btn-group1">
@@ -89,8 +80,7 @@ function CardsLearning(props) {
   const NextButton = () => {
     // console.log("CardsLearning: NextButton render", {evolve, unit, step, word});
 
-    return 
-    <Button
+    return <Button
       onClick={() => {
 
         // console.log("CardsLearning: NextButton onClick", {evolve, unit, step, word});
@@ -143,14 +133,6 @@ function CardsLearning(props) {
   // console.log("CardsLearning: render", {evolve, unit, step, word});
 
   return (
-    <CustomScrollbars
-    style={{ height: '100vh' }}
-    renderView={(props) => (
-      <div {...props} style={{ ...props.style, overflowX: 'scroll', overflowY: 'scroll' }} />
-    )}
-    renderThumbVertical={renderThumbVertical}
-    renderThumbHorizontal={renderThumbHorizontal}
-  >
     <div>
       <Header/>
 
@@ -158,12 +140,12 @@ function CardsLearning(props) {
         <ReactCardFlip isFlipped={flip!=0} flipDirection="vertical">
 
           <Group1/>
+
           <Group2/>
 
         </ReactCardFlip>
       </div>
     </div>
-  </CustomScrollbars>
   );
 }
 
