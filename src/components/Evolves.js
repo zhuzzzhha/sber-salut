@@ -29,11 +29,6 @@ export function Evolves(props) {
           </Button>
         ))}
       </div>
-
-      <div className="background">
-        <div className="transparent">Прозрачный текст</div>
-        <div className="transparent">Прозрачный текст</div>
-      </div>
     </div>
   );
   // }
