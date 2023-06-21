@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import {Button} from "@salutejs/plasma-ui";
-// import {useLocation, useNavigate} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 
 // export class Evolves extends React.Component {
 export function Evolves(props) {
@@ -10,6 +10,7 @@ export function Evolves(props) {
   useEffect(() => {
     console.log("Evolves: useEffect");
     onOpen();
+    window.scrollTo(0, 0)
     return () => {
     };
   }, []);
@@ -29,9 +30,14 @@ export function Evolves(props) {
           </Button>
         ))}
       </div>
+
+      <div className="background">
+        <div className="transparent">Прозрачный текст</div>
+        <div className="transparent">Прозрачный текст</div>
+      </div>
     </div>
   );
   // }
 }
 
-export default Evolves;
+export default Evolves; 
