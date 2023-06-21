@@ -6,10 +6,21 @@ import {useLocation, useNavigate} from "react-router-dom";
 export function Evolves(props) {
   // const navigate = useNavigate();
   const {onOpen, onChoose} = props;
+function customizeScrollbar() {
+  var style = `
+    ::-webkit-scrollbar-thumb {
+      height: 30px; /* Высота вертикальной полосы прокрутки */
+    }
+  `;
 
+  var css = document.createElement("style");
+  css.innerHTML = style;
+  document.head.appendChild(css);
+}
   useEffect(() => {
     console.log("Evolves: useEffect");
     onOpen();
+    customizeScrollbar();
     window.scrollTo(0, 0)
     return () => {
     };
@@ -29,6 +40,11 @@ export function Evolves(props) {
             {evolve}
           </Button>
         ))}
+      </div>
+
+      <div className="background">
+        <div className="transparent">Прозрачный текст</div>
+        <div className="transparent">Прозрачный текст</div>
       </div>
     </div>
   );
