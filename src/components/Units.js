@@ -19,7 +19,6 @@ function Units(props) {
     console.log("Unit: useEffect");
     onOpen({ evolve });
     window.scrollTo(0, 0);
-    disableScroll();
     return () => {};
   }, []);
 
