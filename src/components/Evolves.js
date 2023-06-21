@@ -9,7 +9,7 @@ export function Evolves(props) {
 function customizeScrollbar() {
   var style = `
     ::-webkit-scrollbar-thumb {
-      height: 30px; /* Высота вертикальной полосы прокрутки */
+      height: 5px; /* Высота вертикальной полосы прокрутки */
     }
   `;
 
