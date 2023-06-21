@@ -13,7 +13,6 @@ export function Evolves(props) {
     console.log("Evolves: useEffect");
     onOpen();
     window.scrollTo(0, 0);
-    disableScroll();
     return () => {
     };
   }, []);
