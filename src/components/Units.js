@@ -16,6 +16,7 @@ function Units(props) {
   useEffect(() => {
     console.log("Unit: useEffect");
     onOpen({ evolve });
+    window.scrollTo(0, 0)
     return () => {};
   }, []);
 
@@ -45,6 +46,10 @@ function Units(props) {
           </Button>
         ))}
       </div>
+      <div class="background">
+          <div class="transparent">Прозрачный текст</div>
+          <div class="transparent">Прозрачный текст</div>
+        </div>
     </div>
   );
   // }
