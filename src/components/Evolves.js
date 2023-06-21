@@ -6,10 +6,14 @@ import {useLocation, useNavigate} from "react-router-dom";
 export function Evolves(props) {
   // const navigate = useNavigate();
   const {onOpen, onChoose} = props;
+   function disableScroll() {
+    document.body.style.overflow = 'hidden';
+  }
   useEffect(() => {
     console.log("Evolves: useEffect");
     onOpen();
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
+    disableScroll();
     return () => {
     };
   }, []);
