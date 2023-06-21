@@ -46,6 +46,10 @@ function Units(props) {
           </Button>
         ))}
       </div>
+      <div class="background">
+          <div class="transparent">Прозрачный текст</div>
+          <div class="transparent">Прозрачный текст</div>
+        </div>
     </div>
   );
   // }
