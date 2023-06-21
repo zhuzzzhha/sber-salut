@@ -34,11 +34,14 @@ function CardsLearning(props) {
   const word = repetitions[step].title
 
   // const [flip, setFlip] = useState(false);
-
+  function disableScroll() {
+    document.body.style.overflow = 'hidden';
+  }
   useEffect(() => {
     // console.log("CardsLearning:: useEffect", {evolve, unit, step, word});
     onOpen({evolve, unit, step, flip, word});
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
+    disableScroll();
     return () => {
     };
   }, [evolve, unit, step, flip, word]);
