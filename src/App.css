@@ -188,9 +188,12 @@ input[type="button"] {
 }
 
 .evolves{
-  overflow: hidden;
+  ::-webkit-scrollbar-track-piece{
+    margin-bottom: 10px; 
+  }
 }
 .units{
-  overflow-y: scroll;
-  height: 30px; 
+  ::-webkit-scrollbar-track-piece{
+    margin-bottom: 10px; 
+  }
 }
