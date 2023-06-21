@@ -140,14 +140,15 @@
   opacity: 1;
   transition: opacity;
 }
-.outer-div {
-  padding: 10px;
-}
-.inner-div {
-  margin: auto;
-  width: 300px;
-  height: 100px;
-}
+  .outer-div {
+    padding: 10px;
+  }
+  .inner-div {
+    margin: auto;
+    width: 300px;
+    height: 100px;
+    overflow-y: auto;
+  }
 .divModes {
   margin-left: auto;
   margin-right: auto;
@@ -186,4 +187,10 @@ input[type="button"] {
   height: 300px;
 }
 
-
+.evolves{
+  overflow: hidden;
+}
+.units{
+  overflow-y: scroll;
+  height: 30px; 
+}
