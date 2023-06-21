@@ -37,7 +37,7 @@ function Units(props) {
       </div>
 
       <div className="btn-group">
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((unit) => (
+        {[1, 2, 3, 4, 5, 6].map((unit) => (
           <Button
             onClick={() => onChoose({evolve, unit})}
             key={unit}
@@ -46,10 +46,9 @@ function Units(props) {
           </Button>
         ))}
       </div>
-      <div class="background">
           <div class="transparent">Прозрачный текст</div>
           <div class="transparent">Прозрачный текст</div>
-        </div>
+
     </div>
   );
   // }
