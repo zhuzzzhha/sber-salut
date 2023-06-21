@@ -12,11 +12,14 @@ let evolve = 1;
 function Units(props) {
   const {evolve} = useParams();
   const {onOpen, onChoose, onBack} = props;
-
+ function disableScroll() {
+    document.body.style.overflow = 'hidden';
+  }
   useEffect(() => {
     console.log("Unit: useEffect");
     onOpen({ evolve });
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
+    disableScroll();
     return () => {};
   }, []);
 
