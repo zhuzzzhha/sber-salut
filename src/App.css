@@ -185,25 +185,5 @@ input[type="button"] {
   position:relative;
   height: 300px;
 }
-@media (max-width: 600px) {
-  :root {
-    font-size: calc(0.8vw + 0.8vh + 1vmin); /* Adjust font size for smaller screens */
-  }
 
-  .wrapper {
-    width: 95vw; /* Adjust container width for smaller screens */
-  }
-}
-:root {
-  font-size: calc(1vw + 1vh + 1vmin);
-}
-
-/* Define the container for the scalable field */
-.wrapper {
-  width: 90vw; /* Use viewport width (vw) for relative width */
-  height: 70vh; /* Use viewport height (vh) for relative height */
-  overflow-y: scroll;
-  position: relative;
-  margin: 0 auto; /* Center the container */
-}
 
