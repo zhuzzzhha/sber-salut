@@ -38,6 +38,7 @@ function CardsLearning(props) {
   useEffect(() => {
     // console.log("CardsLearning:: useEffect", {evolve, unit, step, word});
     onOpen({evolve, unit, step, flip, word});
+    window.scrollTo(0, 0)
     return () => {
     };
   }, [evolve, unit, step, flip, word]);
@@ -127,6 +128,9 @@ function CardsLearning(props) {
       <br/>
       <FlipBackButton/>
       <br/>
+      {isLastWord ? <ResultButton/> : <NextButton/>}
+      <br/>
+      {isFirstWord ? <></> : <PrevButton/>}
     </div>
   )
 
@@ -137,7 +141,9 @@ function CardsLearning(props) {
       <Header/>
 
       <div className="btn-group2">
-        <ReactCardFlip isFlipped={flip!=0} flipDirection="vertical">
+        <ReactCardFlip isFlipped={flip!=0} flipDirection="vertical"
+                       flipSpeedBackToFront={0}
+                       flipSpeedFrontToBack={0}>
 
           <Group1/>
 
